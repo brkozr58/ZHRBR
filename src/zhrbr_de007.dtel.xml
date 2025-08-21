@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZHRBR_DE007</ROLLNAME>
+    <DDLANGUAGE>T</DDLANGUAGE>
+    <DOMNAME>TEXT40</DOMNAME>
+    <HEADLEN>40</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>20</SCRLEN2>
+    <SCRLEN3>23</SCRLEN3>
+    <DDTEXT>Oran Gruplama Tanımları</DDTEXT>
+    <REPTEXT>Oran Gruplama Tanımları</REPTEXT>
+    <SCRTEXT_S>Oran Grupl</SCRTEXT_S>
+    <SCRTEXT_M>Oran Gruplama Tanıml</SCRTEXT_M>
+    <SCRTEXT_L>Oran Gruplama Tanımları</SCRTEXT_L>
+    <DTELMASTER>T</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

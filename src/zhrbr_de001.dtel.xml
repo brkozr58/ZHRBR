@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZHRBR_DE001</ROLLNAME>
+    <DDLANGUAGE>T</DDLANGUAGE>
+    <DOMNAME>SEQNR</DOMNAME>
+    <HEADLEN>14</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>15</SCRLEN2>
+    <SCRLEN3>20</SCRLEN3>
+    <DDTEXT>Kesinti Sırası</DDTEXT>
+    <REPTEXT>Kesinti Sırası</REPTEXT>
+    <SCRTEXT_S>Kesinti Sı</SCRTEXT_S>
+    <SCRTEXT_M>Kesinti Sırası</SCRTEXT_M>
+    <SCRTEXT_L>Kesinti Sırası</SCRTEXT_L>
+    <DTELMASTER>T</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

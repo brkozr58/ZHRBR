@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_TABL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD02V>
+    <TABNAME>P9950</TABNAME>
+    <DDLANGUAGE>T</DDLANGUAGE>
+    <TABCLASS>INTTAB</TABCLASS>
+    <LANGDEP>X</LANGDEP>
+    <DDTEXT>Bilgi tipi 9950 için personel ana verileri</DDTEXT>
+    <APPLCLASS>PINF</APPLCLASS>
+   </DD02V>
+   <DD03P_TABLE>
+    <DD03P>
+     <TABNAME>P9950</TABNAME>
+     <FIELDNAME>.INCLUDE</FIELDNAME>
+     <DDLANGUAGE>T</DDLANGUAGE>
+     <POSITION>0001</POSITION>
+     <ADMINFIELD>0</ADMINFIELD>
+     <PRECFIELD>PSHDR</PRECFIELD>
+     <MASK>      S</MASK>
+     <DDTEXT>Bilgi tipi kayıtlarına ilişkin başlık</DDTEXT>
+     <COMPTYPE>S</COMPTYPE>
+    </DD03P>
+    <DD03P>
+     <TABNAME>P9950</TABNAME>
+     <FIELDNAME>.INCLUDE</FIELDNAME>
+     <DDLANGUAGE>T</DDLANGUAGE>
+     <POSITION>0027</POSITION>
+     <ADMINFIELD>0</ADMINFIELD>
+     <PRECFIELD>PS9950</PRECFIELD>
+     <MASK>      S</MASK>
+     <DDTEXT>Borçlar bilgi tipi</DDTEXT>
+     <COMPTYPE>S</COMPTYPE>
+    </DD03P>
+   </DD03P_TABLE>
+  </asx:values>
+ </asx:abap>
+</abapGit>
