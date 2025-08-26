@@ -368,18 +368,18 @@ FORM borc_bt_insert .
              lv_end_temp    TYPE  begda.
 
        CONCATENATE lv_bgd+6(4) lv_bgd+3(2) lv_bgd+0(2) INTO lv_beg .
-       CONCATENATE LV_end+6(4) lv_bgd+3(2) LV_end+0(2) INTO lv_enda .
+       CONCATENATE lv_end+6(4) lv_bgd+3(2) lv_end+0(2) INTO lv_enda .
 
       DATA : s_9950 TYPE pa9950.
       SELECT SINGLE * FROM pa9950 INTO  s_9950
-        WHERE pernr = pernr-pernr AND begda le lv_enda
-         AND icrid = v0-vinfo and endda GE lv_beg . "17.09.2024
+        WHERE pernr = pernr-pernr AND begda LE lv_enda
+         AND icrid = v0-vinfo AND endda GE lv_beg . "17.09.2024
         DATA ls_9951_2 TYPE pa9951 .
               SELECT SINGLE * FROM pa9951 INTO  ls_9951_2 "01.10.2024
-        WHERE pernr = pernr-pernr AND begda le lv_enda
-         AND icrid = v0-vinfo and endda GE lv_beg
-                and manue eq 'X'. ""01.10.2024
-                IF sy-subrc eq '0'."01.10.2024
+        WHERE pernr = pernr-pernr AND begda LE lv_enda
+         AND icrid = v0-vinfo AND endda GE lv_beg
+                AND manue EQ 'X'. ""01.10.2024
+                IF sy-subrc EQ '0'."01.10.2024
                   lv_betrg = lv_betrg - ls_9951_2-odmtr. "01.10.2024
                 ENDIF. "01.10.2024
 

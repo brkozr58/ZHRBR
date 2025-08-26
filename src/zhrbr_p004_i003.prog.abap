@@ -1018,8 +1018,8 @@ CLASS lcl_report IMPLEMENTATION.
       SORT lt_intern BY row col.
       DELETE lt_intern WHERE row EQ 1.
     ENDIF.
-    FIELD-SYMBOLS <f1> TYPE kcde_cells .
-    LOOP AT lt_intern ASSIGNING <f1>.
+
+    LOOP AT lt_intern ASSIGNING FIELD-SYMBOL(<f1>).
       MOVE : <f1>-col TO ld_index.
       UNASSIGN <fs> .
 *      DO 1000 TIMES.
