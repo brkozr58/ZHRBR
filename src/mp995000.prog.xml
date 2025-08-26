@@ -10077,145 +10077,122 @@
       <OBJ_CODE>COP</OBJ_CODE>
       <SUB_CODE>COP</SUB_CODE>
       <MODAL>C</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>B</OBJ_TYPE>
       <OBJ_CODE>0004</OBJ_CODE>
       <SUB_CODE>0004</SUB_CODE>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>B</OBJ_TYPE>
       <OBJ_CODE>INS</OBJ_CODE>
       <SUB_CODE>INS</SUB_CODE>
       <MODAL>C</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>B</OBJ_TYPE>
       <OBJ_CODE>MOD</OBJ_CODE>
       <SUB_CODE>MOD</SUB_CODE>
       <MODAL>C</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>B</OBJ_TYPE>
       <OBJ_CODE>0003</OBJ_CODE>
       <SUB_CODE>0003</SUB_CODE>
       <MODAL>C</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>B</OBJ_TYPE>
       <OBJ_CODE>DEL</OBJ_CODE>
       <SUB_CODE>DEL</SUB_CODE>
       <MODAL>C</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>B</OBJ_TYPE>
       <OBJ_CODE>EDQ</OBJ_CODE>
       <SUB_CODE>EDQ</SUB_CODE>
       <MODAL>C</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>B</OBJ_TYPE>
       <OBJ_CODE>DIS</OBJ_CODE>
       <SUB_CODE>DIS</SUB_CODE>
       <MODAL>C</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>DEL</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>0003</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>0004</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>DIS</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>DIS1</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>INS</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>LIS9</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>LIS0</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>MOD</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>PICK</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>EDQ</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>0001</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>0002</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>COP</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
      <RSMPE_ATRT>
       <OBJ_TYPE>P</OBJ_TYPE>
       <OBJ_CODE>LIS1</OBJ_CODE>
       <MODAL>D</MODAL>
-      <INT_NOTE>A</INT_NOTE>
      </RSMPE_ATRT>
     </DOC>
     <TIT>
