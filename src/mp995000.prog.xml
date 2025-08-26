@@ -574,8 +574,8 @@
       <DESCRIPT>İcra</DESCRIPT>
       <TYPE>I</TYPE>
       <NEXTSCREEN>2100</NEXTSCREEN>
-      <LINES>022</LINES>
-      <COLUMNS>085</COLUMNS>
+      <LINES>030</LINES>
+      <COLUMNS>101</COLUMNS>
      </HEADER>
      <CONTAINERS>
       <RPY_DYCATT>
@@ -715,7 +715,6 @@
        <FROM_DICT>X</FROM_DICT>
        <MODIFIC>F</MODIFIC>
        <REQU_ENTRY>N</REQU_ENTRY>
-       <INVISIBLE>X</INVISIBLE>
        <LABELLEFT>X</LABELLEFT>
       </RPY_DYFATC>
       <RPY_DYFATC>
@@ -733,9 +732,8 @@
        <GROUP3>025</GROUP3>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
-       <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
-       <INVISIBLE>X</INVISIBLE>
+       <REQU_ENTRY>N</REQU_ENTRY>
        <DICT_I_VAL>X</DICT_I_VAL>
       </RPY_DYFATC>
       <RPY_DYFATC>
@@ -772,7 +770,6 @@
        <FROM_DICT>X</FROM_DICT>
        <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
-       <REQU_ENTRY>O</REQU_ENTRY>
       </RPY_DYFATC>
       <RPY_DYFATC>
        <CONT_TYPE>SCREEN</CONT_TYPE>
@@ -807,7 +804,6 @@
        <UP_LOWER>X</UP_LOWER>
        <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
-       <REQU_ENTRY>O</REQU_ENTRY>
       </RPY_DYFATC>
       <RPY_DYFATC>
        <CONT_TYPE>SCREEN</CONT_TYPE>
@@ -839,7 +835,7 @@
        <HEIGHT>001</HEIGHT>
        <GROUP1>006</GROUP1>
        <GROUP3>002</GROUP3>
-       <FORMAT>CHAR</FORMAT>
+       <FORMAT>NUMC</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
@@ -878,7 +874,6 @@
        <FROM_DICT>X</FROM_DICT>
        <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
-       <REQU_ENTRY>O</REQU_ENTRY>
        <MATCHCODE>ZHRBR_SH004</MATCHCODE>
       </RPY_DYFATC>
       <RPY_DYFATC>
@@ -971,12 +966,12 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>FRAME</TYPE>
        <NAME>BORC</NAME>
-       <TEXT>Hesaplama_Bilgileri________________________________________________________________</TEXT>
+       <TEXT>Hesaplama_Bilgileri_________________________________________________________________</TEXT>
        <LINE>009</LINE>
        <COLUMN>001</COLUMN>
-       <LENGTH>084</LENGTH>
-       <VISLENGTH>084</VISLENGTH>
-       <HEIGHT>013</HEIGHT>
+       <LENGTH>085</LENGTH>
+       <VISLENGTH>085</VISLENGTH>
+       <HEIGHT>017</HEIGHT>
        <FORMAT>CHAR</FORMAT>
        <REQU_ENTRY>N</REQU_ENTRY>
       </RPY_DYFATC>
@@ -1016,6 +1011,7 @@
        <FROM_DICT>X</FROM_DICT>
        <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
+       <REQU_ENTRY>O</REQU_ENTRY>
        <POSS_ENTRY>1</POSS_ENTRY>
        <DICT_I_VAL>X</DICT_I_VAL>
       </RPY_DYFATC>
@@ -1697,13 +1693,349 @@
        <CONT_TYPE>SCREEN</CONT_TYPE>
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
-       <NAME>P9950-ACILM</NAME>
-       <TEXT>Borç_Açıklaması_____</TEXT>
+       <NAME>P9950-ORNG6</NAME>
+       <TEXT>Kesinti_Oranı_______</TEXT>
        <LINE>020</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
        <VISLENGTH>020</VISLENGTH>
        <HEIGHT>001</HEIGHT>
+       <GROUP2>02</GROUP2>
+       <GROUP4>01</GROUP4>
+       <FORMAT>CHAR</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>F</MODIFIC>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <LABELLEFT>X</LABELLEFT>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>P9950-ORNG6</NAME>
+       <TEXT>____________________</TEXT>
+       <DROPDOWN>L</DROPDOWN>
+       <LINE>020</LINE>
+       <COLUMN>023</COLUMN>
+       <LENGTH>020</LENGTH>
+       <VISLENGTH>020</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP1>006</GROUP1>
+       <GROUP2>02</GROUP2>
+       <GROUP3>018</GROUP3>
+       <GROUP4>01</GROUP4>
+       <FORMAT>NUMC</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>X</MODIFIC>
+       <INPUT_FLD>X</INPUT_FLD>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+       <POSS_ENTRY>1</POSS_ENTRY>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>P9950-ORNY6</NAME>
+       <TEXT>Yüzde_______________</TEXT>
+       <LINE>020</LINE>
+       <COLUMN>049</COLUMN>
+       <LENGTH>020</LENGTH>
+       <VISLENGTH>020</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP2>02</GROUP2>
+       <GROUP4>01</GROUP4>
+       <FORMAT>CHAR</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>F</MODIFIC>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <LABELLEFT>X</LABELLEFT>
+       <DICT_I_VAL>X</DICT_I_VAL>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>P9950-ORNY6</NAME>
+       <TEXT>_________</TEXT>
+       <DROPDOWN>L</DROPDOWN>
+       <LINE>020</LINE>
+       <COLUMN>070</COLUMN>
+       <LENGTH>009</LENGTH>
+       <VISLENGTH>010</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP1>006</GROUP1>
+       <GROUP2>02</GROUP2>
+       <GROUP3>019</GROUP3>
+       <GROUP4>01</GROUP4>
+       <FORMAT>NUMC</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>X</MODIFIC>
+       <INPUT_FLD>X</INPUT_FLD>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+       <POSS_ENTRY>1</POSS_ENTRY>
+       <DICT_I_VAL>X</DICT_I_VAL>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>P9950-ORNG7</NAME>
+       <TEXT>Kesinti_Oranı_______</TEXT>
+       <LINE>021</LINE>
+       <COLUMN>002</COLUMN>
+       <LENGTH>020</LENGTH>
+       <VISLENGTH>020</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP2>02</GROUP2>
+       <GROUP4>01</GROUP4>
+       <FORMAT>CHAR</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>F</MODIFIC>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <LABELLEFT>X</LABELLEFT>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>P9950-ORNG7</NAME>
+       <TEXT>____________________</TEXT>
+       <DROPDOWN>L</DROPDOWN>
+       <LINE>021</LINE>
+       <COLUMN>023</COLUMN>
+       <LENGTH>020</LENGTH>
+       <VISLENGTH>020</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP1>006</GROUP1>
+       <GROUP2>02</GROUP2>
+       <GROUP3>020</GROUP3>
+       <GROUP4>01</GROUP4>
+       <FORMAT>NUMC</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>X</MODIFIC>
+       <INPUT_FLD>X</INPUT_FLD>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+       <POSS_ENTRY>1</POSS_ENTRY>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>P9950-ORNY7</NAME>
+       <TEXT>Yüzde_______________</TEXT>
+       <LINE>021</LINE>
+       <COLUMN>049</COLUMN>
+       <LENGTH>020</LENGTH>
+       <VISLENGTH>020</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP2>02</GROUP2>
+       <GROUP4>01</GROUP4>
+       <FORMAT>CHAR</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>F</MODIFIC>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <LABELLEFT>X</LABELLEFT>
+       <DICT_I_VAL>X</DICT_I_VAL>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>P9950-ORNY7</NAME>
+       <TEXT>__________</TEXT>
+       <DROPDOWN>L</DROPDOWN>
+       <LINE>021</LINE>
+       <COLUMN>070</COLUMN>
+       <LENGTH>010</LENGTH>
+       <VISLENGTH>010</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP1>006</GROUP1>
+       <GROUP2>02</GROUP2>
+       <GROUP3>021</GROUP3>
+       <GROUP4>01</GROUP4>
+       <FORMAT>NUMC</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>X</MODIFIC>
+       <INPUT_FLD>X</INPUT_FLD>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+       <POSS_ENTRY>1</POSS_ENTRY>
+       <DICT_I_VAL>X</DICT_I_VAL>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>P9950-ORNG8</NAME>
+       <TEXT>Kesinti_Oranı_______</TEXT>
+       <LINE>022</LINE>
+       <COLUMN>002</COLUMN>
+       <LENGTH>020</LENGTH>
+       <VISLENGTH>020</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>CHAR</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>F</MODIFIC>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <LABELLEFT>X</LABELLEFT>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>P9950-ORNG8</NAME>
+       <TEXT>____________________</TEXT>
+       <DROPDOWN>L</DROPDOWN>
+       <LINE>022</LINE>
+       <COLUMN>023</COLUMN>
+       <LENGTH>020</LENGTH>
+       <VISLENGTH>020</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP1>006</GROUP1>
+       <GROUP2>02</GROUP2>
+       <GROUP3>022</GROUP3>
+       <GROUP4>01</GROUP4>
+       <FORMAT>NUMC</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>X</MODIFIC>
+       <INPUT_FLD>X</INPUT_FLD>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>P9950-ORNY8</NAME>
+       <TEXT>Yüzde_______________</TEXT>
+       <LINE>022</LINE>
+       <COLUMN>049</COLUMN>
+       <LENGTH>020</LENGTH>
+       <VISLENGTH>020</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>CHAR</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>F</MODIFIC>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <LABELLEFT>X</LABELLEFT>
+       <DICT_I_VAL>X</DICT_I_VAL>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>P9950-ORNY8</NAME>
+       <TEXT>________</TEXT>
+       <DROPDOWN>L</DROPDOWN>
+       <LINE>022</LINE>
+       <COLUMN>070</COLUMN>
+       <LENGTH>008</LENGTH>
+       <VISLENGTH>010</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP1>006</GROUP1>
+       <GROUP2>02</GROUP2>
+       <GROUP3>023</GROUP3>
+       <GROUP4>01</GROUP4>
+       <FORMAT>NUMC</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>X</MODIFIC>
+       <INPUT_FLD>X</INPUT_FLD>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+       <POSS_ENTRY>1</POSS_ENTRY>
+       <DICT_I_VAL>X</DICT_I_VAL>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>P9950-ORNG9</NAME>
+       <TEXT>Kesinti_Oranı_______</TEXT>
+       <LINE>023</LINE>
+       <COLUMN>002</COLUMN>
+       <LENGTH>020</LENGTH>
+       <VISLENGTH>020</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>CHAR</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>F</MODIFIC>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <LABELLEFT>X</LABELLEFT>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>P9950-ORNG9</NAME>
+       <TEXT>___________________</TEXT>
+       <DROPDOWN>L</DROPDOWN>
+       <LINE>023</LINE>
+       <COLUMN>023</COLUMN>
+       <LENGTH>019</LENGTH>
+       <VISLENGTH>020</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP1>006</GROUP1>
+       <GROUP2>02</GROUP2>
+       <GROUP3>024</GROUP3>
+       <GROUP4>01</GROUP4>
+       <FORMAT>NUMC</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>X</MODIFIC>
+       <INPUT_FLD>X</INPUT_FLD>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>P9950-ORNY9</NAME>
+       <TEXT>Yüzde_______________</TEXT>
+       <LINE>023</LINE>
+       <COLUMN>049</COLUMN>
+       <LENGTH>020</LENGTH>
+       <VISLENGTH>020</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>CHAR</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>F</MODIFIC>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <LABELLEFT>X</LABELLEFT>
+       <DICT_I_VAL>X</DICT_I_VAL>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>P9950-ORNY9</NAME>
+       <TEXT>________</TEXT>
+       <DROPDOWN>L</DROPDOWN>
+       <LINE>023</LINE>
+       <COLUMN>070</COLUMN>
+       <LENGTH>008</LENGTH>
+       <VISLENGTH>010</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP1>006</GROUP1>
+       <GROUP2>02</GROUP2>
+       <GROUP3>25</GROUP3>
+       <GROUP4>01</GROUP4>
+       <FORMAT>NUMC</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>X</MODIFIC>
+       <INPUT_FLD>X</INPUT_FLD>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+       <POSS_ENTRY>1</POSS_ENTRY>
+       <DICT_I_VAL>X</DICT_I_VAL>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>P9950-ACILM</NAME>
+       <TEXT>Borç_Açıklaması_____</TEXT>
+       <LINE>024</LINE>
+       <COLUMN>002</COLUMN>
+       <LENGTH>020</LENGTH>
+       <VISLENGTH>020</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP2>02</GROUP2>
+       <GROUP4>01</GROUP4>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <MODIFIC>V</MODIFIC>
@@ -1717,13 +2049,13 @@
        <NAME>P9950-ACILM</NAME>
        <TEXT>____________________________________________________________________________________________________________________________________</TEXT>
        <ROLLING>X</ROLLING>
-       <LINE>020</LINE>
+       <LINE>024</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>255</LENGTH>
        <VISLENGTH>060</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <GROUP1>006</GROUP1>
-       <GROUP3>020</GROUP3>
+       <GROUP3>022</GROUP3>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <MODIFIC>X</MODIFIC>
@@ -1837,6 +2169,30 @@
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>    FIELD p9950-faizt.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orny9.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orng9.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orny8.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orng8.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orny7.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orng7.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orny6.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orng6.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>    FIELD p9950-orny5.</LINE>
@@ -1968,6 +2324,30 @@
        <LINE>    FIELD p9950-faizt.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orny9.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orng9.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orny8.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orng8.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orny7.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orng7.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orny6.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD p9950-orng6.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
        <LINE>    FIELD p9950-orny5.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
@@ -2044,6 +2424,18 @@
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>  FIELD p9950-orng5 MODULE orng5_values.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>  FIELD p9950-orng6 MODULE orng6_values.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>  FIELD p9950-orng7 MODULE orng7_values.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>  FIELD p9950-orng8 MODULE orng8_values.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>  FIELD p9950-orng9 MODULE orng9_values.</LINE>
       </RPY_DYFLOW>
      </FLOW_LOGIC>
     </item>
@@ -2513,7 +2905,7 @@
       <TYPE>I</TYPE>
       <NEXTSCREEN>2300</NEXTSCREEN>
       <LINES>023</LINES>
-      <COLUMNS>090</COLUMNS>
+      <COLUMNS>091</COLUMNS>
      </HEADER>
      <CONTAINERS>
       <RPY_DYCATT>
@@ -2660,7 +3052,6 @@
        <FROM_DICT>X</FROM_DICT>
        <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
-       <REQU_ENTRY>O</REQU_ENTRY>
       </RPY_DYFATC>
       <RPY_DYFATC>
        <CONT_TYPE>SCREEN</CONT_TYPE>
@@ -2695,7 +3086,6 @@
        <UP_LOWER>X</UP_LOWER>
        <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
-       <REQU_ENTRY>O</REQU_ENTRY>
       </RPY_DYFATC>
       <RPY_DYFATC>
        <CONT_TYPE>SCREEN</CONT_TYPE>
@@ -2727,7 +3117,7 @@
        <HEIGHT>001</HEIGHT>
        <GROUP1>006</GROUP1>
        <GROUP3>002</GROUP3>
-       <FORMAT>CHAR</FORMAT>
+       <FORMAT>NUMC</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
@@ -2780,7 +3170,6 @@
        <FROM_DICT>X</FROM_DICT>
        <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
-       <REQU_ENTRY>O</REQU_ENTRY>
       </RPY_DYFATC>
       <RPY_DYFATC>
        <CONT_TYPE>SCREEN</CONT_TYPE>
@@ -4169,7 +4558,6 @@
       <PROGRAM>MP995000</PROGRAM>
       <SCREEN>3000</SCREEN>
       <LANGUAGE>T</LANGUAGE>
-      <DESCRIPT>Overview/List Screen (TC)</DESCRIPT>
       <TYPE>N</TYPE>
       <NEXTSCREEN>3000</NEXTSCREEN>
       <LINES>035</LINES>
@@ -4636,7 +5024,7 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNG1</NAME>
-       <TEXT>Or</TEXT>
+       <TEXT>Ke</TEXT>
        <LINE>001</LINE>
        <COLUMN>011</COLUMN>
        <LENGTH>002</LENGTH>
@@ -4653,7 +5041,7 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNY1</NAME>
-       <TEXT>Ora</TEXT>
+       <TEXT>Yüz</TEXT>
        <LINE>001</LINE>
        <COLUMN>012</COLUMN>
        <LENGTH>003</LENGTH>
@@ -4670,7 +5058,7 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNG2</NAME>
-       <TEXT>Or</TEXT>
+       <TEXT>Ke</TEXT>
        <LINE>001</LINE>
        <COLUMN>013</COLUMN>
        <LENGTH>002</LENGTH>
@@ -4687,7 +5075,7 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNY2</NAME>
-       <TEXT>Ora</TEXT>
+       <TEXT>Yüz</TEXT>
        <LINE>001</LINE>
        <COLUMN>014</COLUMN>
        <LENGTH>003</LENGTH>
@@ -4704,7 +5092,7 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNG3</NAME>
-       <TEXT>Or</TEXT>
+       <TEXT>Ke</TEXT>
        <LINE>001</LINE>
        <COLUMN>015</COLUMN>
        <LENGTH>002</LENGTH>
@@ -4721,7 +5109,7 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNY3</NAME>
-       <TEXT>Ora</TEXT>
+       <TEXT>Yüz</TEXT>
        <LINE>001</LINE>
        <COLUMN>016</COLUMN>
        <LENGTH>003</LENGTH>
@@ -4738,7 +5126,7 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNG4</NAME>
-       <TEXT>Or</TEXT>
+       <TEXT>Ke</TEXT>
        <LINE>001</LINE>
        <COLUMN>017</COLUMN>
        <LENGTH>002</LENGTH>
@@ -4755,7 +5143,7 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNY4</NAME>
-       <TEXT>Ora</TEXT>
+       <TEXT>Yüz</TEXT>
        <LINE>001</LINE>
        <COLUMN>018</COLUMN>
        <LENGTH>003</LENGTH>
@@ -4772,7 +5160,7 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNG5</NAME>
-       <TEXT>Or</TEXT>
+       <TEXT>Ke</TEXT>
        <LINE>001</LINE>
        <COLUMN>019</COLUMN>
        <LENGTH>002</LENGTH>
@@ -4789,9 +5177,77 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNY5</NAME>
-       <TEXT>Ora</TEXT>
+       <TEXT>Yüz</TEXT>
        <LINE>001</LINE>
        <COLUMN>020</COLUMN>
+       <LENGTH>003</LENGTH>
+       <VISLENGTH>003</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>CHAR</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>4</MODIFIC>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <TC_HEADING>X</TC_HEADING>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
+       <CONT_NAME>TC3000</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>*P9950-ORNG6</NAME>
+       <TEXT>Ke</TEXT>
+       <LINE>001</LINE>
+       <COLUMN>021</COLUMN>
+       <LENGTH>002</LENGTH>
+       <VISLENGTH>002</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>CHAR</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>4</MODIFIC>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <TC_HEADING>X</TC_HEADING>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
+       <CONT_NAME>TC3000</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>*P9950-ORNY6</NAME>
+       <TEXT>Yüz</TEXT>
+       <LINE>001</LINE>
+       <COLUMN>022</COLUMN>
+       <LENGTH>003</LENGTH>
+       <VISLENGTH>003</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>CHAR</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>4</MODIFIC>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <TC_HEADING>X</TC_HEADING>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
+       <CONT_NAME>TC3000</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>*P9950-ORNG7</NAME>
+       <TEXT>Ke</TEXT>
+       <LINE>001</LINE>
+       <COLUMN>023</COLUMN>
+       <LENGTH>002</LENGTH>
+       <VISLENGTH>002</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>CHAR</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>4</MODIFIC>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <TC_HEADING>X</TC_HEADING>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
+       <CONT_NAME>TC3000</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>*P9950-ORNY7</NAME>
+       <TEXT>Yüz</TEXT>
+       <LINE>001</LINE>
+       <COLUMN>024</COLUMN>
        <LENGTH>003</LENGTH>
        <VISLENGTH>003</VISLENGTH>
        <HEIGHT>001</HEIGHT>
@@ -4808,7 +5264,7 @@
        <NAME>*P9950-FAIZT</NAME>
        <TEXT>Faiz_Tutar</TEXT>
        <LINE>001</LINE>
-       <COLUMN>021</COLUMN>
+       <COLUMN>025</COLUMN>
        <LENGTH>010</LENGTH>
        <VISLENGTH>010</VISLENGTH>
        <HEIGHT>001</HEIGHT>
@@ -4825,7 +5281,7 @@
        <NAME>*P9950-ACILM</NAME>
        <TEXT>Borç_Açıklaması_____________________________________________________________________________________________________________________</TEXT>
        <LINE>001</LINE>
-       <COLUMN>022</COLUMN>
+       <COLUMN>026</COLUMN>
        <LENGTH>132</LENGTH>
        <VISLENGTH>132</VISLENGTH>
        <HEIGHT>001</HEIGHT>
@@ -4842,7 +5298,7 @@
        <NAME>*P9950-DOSSR</NAME>
        <TEXT>Do</TEXT>
        <LINE>001</LINE>
-       <COLUMN>023</COLUMN>
+       <COLUMN>027</COLUMN>
        <LENGTH>002</LENGTH>
        <VISLENGTH>002</VISLENGTH>
        <HEIGHT>001</HEIGHT>
@@ -4859,7 +5315,7 @@
        <NAME>*P9950-DOSNO</NAME>
        <TEXT>Dosya_No____________</TEXT>
        <LINE>001</LINE>
-       <COLUMN>024</COLUMN>
+       <COLUMN>028</COLUMN>
        <LENGTH>020</LENGTH>
        <VISLENGTH>020</VISLENGTH>
        <HEIGHT>001</HEIGHT>
@@ -4876,7 +5332,7 @@
        <NAME>*P9950-ICRAD</NAME>
        <TEXT>İcra</TEXT>
        <LINE>001</LINE>
-       <COLUMN>025</COLUMN>
+       <COLUMN>029</COLUMN>
        <LENGTH>004</LENGTH>
        <VISLENGTH>004</VISLENGTH>
        <HEIGHT>001</HEIGHT>
@@ -4893,7 +5349,7 @@
        <NAME>*P9950-ALICI</NAME>
        <TEXT>Alıcı___________________________________</TEXT>
        <LINE>001</LINE>
-       <COLUMN>026</COLUMN>
+       <COLUMN>030</COLUMN>
        <LENGTH>040</LENGTH>
        <VISLENGTH>040</VISLENGTH>
        <HEIGHT>001</HEIGHT>
@@ -4910,7 +5366,7 @@
        <NAME>*P9950-AIBAN</NAME>
        <TEXT>Alıcı_IBAN________________________</TEXT>
        <LINE>001</LINE>
-       <COLUMN>027</COLUMN>
+       <COLUMN>031</COLUMN>
        <LENGTH>034</LENGTH>
        <VISLENGTH>034</VISLENGTH>
        <HEIGHT>001</HEIGHT>
@@ -4925,9 +5381,9 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-COMPL</NAME>
-       <TEXT>İ</TEXT>
+       <TEXT>T</TEXT>
        <LINE>001</LINE>
-       <COLUMN>028</COLUMN>
+       <COLUMN>032</COLUMN>
        <LENGTH>001</LENGTH>
        <VISLENGTH>001</VISLENGTH>
        <HEIGHT>001</HEIGHT>
@@ -4944,7 +5400,7 @@
        <NAME>*RP50M-SPRTX</NAME>
        <TEXT>Blokaj_göstergesi_______________________</TEXT>
        <LINE>001</LINE>
-       <COLUMN>029</COLUMN>
+       <COLUMN>033</COLUMN>
        <LENGTH>040</LENGTH>
        <VISLENGTH>002</VISLENGTH>
        <HEIGHT>001</HEIGHT>
@@ -5054,7 +5510,7 @@
        <VISLENGTH>003</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <GROUP3>005</GROUP3>
-       <FORMAT>CHAR</FORMAT>
+       <FORMAT>NUMC</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <OUTPUT_FLD>X</OUTPUT_FLD>
        <OUTPUTONLY>X</OUTPUTONLY>
@@ -5343,14 +5799,88 @@
        <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
+       <NAME>P9950-ORNG6</NAME>
+       <TEXT>__</TEXT>
+       <LINE>001</LINE>
+       <COLUMN>021</COLUMN>
+       <LENGTH>002</LENGTH>
+       <VISLENGTH>002</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP3>021</GROUP3>
+       <FORMAT>NUMC</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+       <OUTPUTONLY>X</OUTPUTONLY>
+       <REQU_ENTRY>N</REQU_ENTRY>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
+       <CONT_NAME>TC3000</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>P9950-ORNY6</NAME>
+       <TEXT>___</TEXT>
+       <LINE>001</LINE>
+       <COLUMN>022</COLUMN>
+       <LENGTH>003</LENGTH>
+       <VISLENGTH>003</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP3>022</GROUP3>
+       <FORMAT>NUMC</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+       <OUTPUTONLY>X</OUTPUTONLY>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <DICT_I_VAL>X</DICT_I_VAL>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
+       <CONT_NAME>TC3000</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>P9950-ORNG7</NAME>
+       <TEXT>__</TEXT>
+       <LINE>001</LINE>
+       <COLUMN>023</COLUMN>
+       <LENGTH>002</LENGTH>
+       <VISLENGTH>002</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP3>023</GROUP3>
+       <FORMAT>NUMC</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+       <OUTPUTONLY>X</OUTPUTONLY>
+       <REQU_ENTRY>N</REQU_ENTRY>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
+       <CONT_NAME>TC3000</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>P9950-ORNY7</NAME>
+       <TEXT>___</TEXT>
+       <LINE>001</LINE>
+       <COLUMN>024</COLUMN>
+       <LENGTH>003</LENGTH>
+       <VISLENGTH>003</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP3>024</GROUP3>
+       <FORMAT>NUMC</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+       <OUTPUTONLY>X</OUTPUTONLY>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <DICT_I_VAL>X</DICT_I_VAL>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
+       <CONT_NAME>TC3000</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-FAIZT</NAME>
        <TEXT>__________</TEXT>
        <LINE>001</LINE>
-       <COLUMN>021</COLUMN>
+       <COLUMN>025</COLUMN>
        <LENGTH>010</LENGTH>
        <VISLENGTH>010</VISLENGTH>
        <HEIGHT>001</HEIGHT>
-       <GROUP3>021</GROUP3>
+       <GROUP3>025</GROUP3>
        <FORMAT>CURR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <OUTPUT_FLD>X</OUTPUT_FLD>
@@ -5366,11 +5896,11 @@
        <TEXT>____________________________________________________________________________________________________________________________________</TEXT>
        <ROLLING>X</ROLLING>
        <LINE>001</LINE>
-       <COLUMN>022</COLUMN>
+       <COLUMN>026</COLUMN>
        <LENGTH>255</LENGTH>
        <VISLENGTH>132</VISLENGTH>
        <HEIGHT>001</HEIGHT>
-       <GROUP3>022</GROUP3>
+       <GROUP3>026</GROUP3>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <UP_LOWER>X</UP_LOWER>
@@ -5385,11 +5915,11 @@
        <NAME>P9950-DOSSR</NAME>
        <TEXT>__</TEXT>
        <LINE>001</LINE>
-       <COLUMN>023</COLUMN>
+       <COLUMN>027</COLUMN>
        <LENGTH>002</LENGTH>
        <VISLENGTH>002</VISLENGTH>
        <HEIGHT>001</HEIGHT>
-       <GROUP3>023</GROUP3>
+       <GROUP3>027</GROUP3>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <OUTPUT_FLD>X</OUTPUT_FLD>
@@ -5403,11 +5933,11 @@
        <NAME>P9950-DOSNO</NAME>
        <TEXT>____________________</TEXT>
        <LINE>001</LINE>
-       <COLUMN>024</COLUMN>
+       <COLUMN>028</COLUMN>
        <LENGTH>020</LENGTH>
        <VISLENGTH>020</VISLENGTH>
        <HEIGHT>001</HEIGHT>
-       <GROUP3>024</GROUP3>
+       <GROUP3>028</GROUP3>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <UP_LOWER>X</UP_LOWER>
@@ -5422,11 +5952,11 @@
        <NAME>P9950-ICRAD</NAME>
        <TEXT>____</TEXT>
        <LINE>001</LINE>
-       <COLUMN>025</COLUMN>
+       <COLUMN>029</COLUMN>
        <LENGTH>004</LENGTH>
        <VISLENGTH>004</VISLENGTH>
        <HEIGHT>001</HEIGHT>
-       <GROUP3>025</GROUP3>
+       <GROUP3>029</GROUP3>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <OUTPUT_FLD>X</OUTPUT_FLD>
@@ -5440,11 +5970,11 @@
        <NAME>P9950-ALICI</NAME>
        <TEXT>________________________________________</TEXT>
        <LINE>001</LINE>
-       <COLUMN>026</COLUMN>
+       <COLUMN>030</COLUMN>
        <LENGTH>040</LENGTH>
        <VISLENGTH>040</VISLENGTH>
        <HEIGHT>001</HEIGHT>
-       <GROUP3>026</GROUP3>
+       <GROUP3>030</GROUP3>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <OUTPUT_FLD>X</OUTPUT_FLD>
@@ -5458,11 +5988,11 @@
        <NAME>P9950-AIBAN</NAME>
        <TEXT>__________________________________</TEXT>
        <LINE>001</LINE>
-       <COLUMN>027</COLUMN>
+       <COLUMN>031</COLUMN>
        <LENGTH>034</LENGTH>
        <VISLENGTH>034</VISLENGTH>
        <HEIGHT>001</HEIGHT>
-       <GROUP3>027</GROUP3>
+       <GROUP3>031</GROUP3>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <OUTPUT_FLD>X</OUTPUT_FLD>
@@ -5476,11 +6006,11 @@
        <NAME>P9950-COMPL</NAME>
        <TEXT>_</TEXT>
        <LINE>001</LINE>
-       <COLUMN>028</COLUMN>
+       <COLUMN>032</COLUMN>
        <LENGTH>001</LENGTH>
        <VISLENGTH>001</VISLENGTH>
        <HEIGHT>001</HEIGHT>
-       <GROUP3>028</GROUP3>
+       <GROUP3>032</GROUP3>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <OUTPUT_FLD>X</OUTPUT_FLD>
@@ -5496,11 +6026,11 @@
        <TEXT>________________________________________</TEXT>
        <ROLLING>X</ROLLING>
        <LINE>001</LINE>
-       <COLUMN>029</COLUMN>
+       <COLUMN>033</COLUMN>
        <LENGTH>040</LENGTH>
        <VISLENGTH>002</VISLENGTH>
        <HEIGHT>001</HEIGHT>
-       <GROUP3>029</GROUP3>
+       <GROUP3>033</GROUP3>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <UP_LOWER>X</UP_LOWER>

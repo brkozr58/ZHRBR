@@ -103,7 +103,10 @@ method ODENEN_BORC.
 
   SELECT * FROM pa9951 INTO TABLE t9951
                             WHERE icrid EQ icrid
-                              AND begda LT begda .
+*{   REPLACE        MIDK902391                                        1
+*\                              AND begda LT begda .
+                              AND begda Lt begda . "16.09.2024
+*}   REPLACE
 
   LOOP AT t9951 INTO s9951.
     icodm = icodm + s9951-odmtr.
@@ -112,7 +115,7 @@ method ODENEN_BORC.
 endmethod.
 
 
-METHOD ORAN_MAX_KESINTI.
+METHOD oran_max_kesinti.
 
   DATA : t004    TYPE TABLE OF zhrbr_t004.
   DATA : s004    TYPE zhrbr_t004.
@@ -124,48 +127,56 @@ METHOD ORAN_MAX_KESINTI.
                                   AND endda GE begda
                                   AND bukrs EQ bukrs.
 
-  DO 5 TIMES VARYING lv_orng FROM s9950-orng1 NEXT s9950-orng2
+  DO 9 TIMES VARYING lv_orng FROM s9950-orng1 NEXT s9950-orng2
              VARYING lv_orny FROM s9950-orny1 NEXT s9950-orny2.
     IF lv_orng IS NOT INITIAL AND lv_orny IS NOT INITIAL.
-      LOOP AT t004 INTO s004 WHERE orngr EQ lv_orng.
+      LOOP AT t004 INTO s004 WHERE orngr EQ lv_orng."Net
         CLEAR : st.
-        LOOP AT rt INTO st WHERE lgart EQ s004-lgart.
-
+        LOOP AT rt INTO st WHERE lgart EQ s004-lgart_nt.
           IF s004-islem EQ '-'.
             IF st-betrg GT 0.
               st-betrg = st-betrg * -1.
             ENDIF.
           ENDIF.
-
-          IF s004-netbr EQ 'N'.
-            "Max Kesinti + Net Ücret * Yüzdesi
-            ornks = ornks + ( ( st-betrg * lv_orny ) / 100 ).
-          ELSE.
-            "Max Kesinti + ( ( Brüt Ücret * Yüzdesi ) ) * Oran ile net e çevirme
-            ornks = ornks + ( ( ( ( st-betrg * lv_orny ) / 100 ) * oran ) / 100 ).
-          ENDIF.
+          ornks = ornks + ( ( st-betrg * lv_orny ) / 100 ).
         ENDLOOP.
-        IF sy-subrc NE 0.
-          LOOP AT it INTO st WHERE lgart EQ s004-lgart.
-
-
+        IF sy-subrc NE 0."Brüt
+          LOOP AT rt INTO st WHERE lgart EQ s004-lgart.
             IF s004-islem EQ '-'.
               IF st-betrg GT 0.
                 st-betrg = st-betrg * -1.
               ENDIF.
             ENDIF.
-
-            IF s004-netbr EQ 'N'.
-              "Max Kesinti + Net Ücret * Yüzdesi
-              ornks = ornks + ( ( st-betrg * lv_orny ) / 100 ).
-            ELSE.
-              "Max Kesinti + ( ( Brüt Ücret * Yüzdesi ) ) * Oran ile net e çevirme
-              ornks = ornks + ( ( ( ( st-betrg * lv_orny ) / 100 ) * oran ) / 100 ).
-            ENDIF.
+            ornks = ornks + ( ( ( ( st-betrg * lv_orny ) / 100 ) * oran ) / 100 ).
           ENDLOOP.
+          IF sy-subrc NE 0.
+            LOOP AT it INTO st WHERE lgart EQ s004-lgart_nt."Net
+              IF s004-islem EQ '-'.
+                IF st-betrg GT 0.
+                  st-betrg = st-betrg * -1.
+                ENDIF.
+              ENDIF.
+              ornks = ornks + ( ( st-betrg * lv_orny ) / 100 ).
+            ENDLOOP.
+            IF sy-subrc NE 0.
+              LOOP AT it INTO st WHERE lgart EQ s004-lgart."Brüt
+                IF s004-islem EQ '-'.
+                  IF st-betrg GT 0.
+                    st-betrg = st-betrg * -1.
+                  ENDIF.
+                ENDIF.
+                ornks = ornks + ( ( ( ( st-betrg * lv_orny ) / 100 ) * oran ) / 100 ).
+              ENDLOOP.
+            ENDIF.
+          ENDIF.
         ENDIF.
       ENDLOOP.
     ENDIF.
+*{   INSERT         ISDK935744                                        1
+*    IF ornks LE 0.
+*      CLEAR ornks.
+*    ENDIF.
+*}   INSERT
     CLEAR : lv_orng , lv_orny.
   ENDDO.
 

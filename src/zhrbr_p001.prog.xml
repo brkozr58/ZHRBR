@@ -2108,6 +2108,12 @@
     </item>
     <item>
      <ID>S</ID>
+     <KEY>P1_IMZA2</KEY>
+     <ENTRY>İmzalayan</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
      <KEY>P2_EVTRH</KEY>
      <ENTRY>Evrak Düzenleme Tarihi</ENTRY>
      <LENGTH>30</LENGTH>
@@ -2116,6 +2122,12 @@
      <ID>S</ID>
      <KEY>P2_IMZA1</KEY>
      <ENTRY>İmzalayan 1</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P2_IMZA2</KEY>
+     <ENTRY>İmzalayan 2</ENTRY>
      <LENGTH>19</LENGTH>
     </item>
     <item>
@@ -2134,6 +2146,12 @@
      <ID>S</ID>
      <KEY>P3_IMZA1</KEY>
      <ENTRY>İmzalayan 1</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P3_IMZA2</KEY>
+     <ENTRY>İmzalayan 2</ENTRY>
      <LENGTH>19</LENGTH>
     </item>
     <item>
@@ -2164,6 +2182,12 @@
      <ID>S</ID>
      <KEY>P4_IMZA1</KEY>
      <ENTRY>İmzalayan 1</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P4_IMZA2</KEY>
+     <ENTRY>İmzalayan 2</ENTRY>
      <LENGTH>19</LENGTH>
     </item>
     <item>

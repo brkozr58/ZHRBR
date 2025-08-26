@@ -112,6 +112,54 @@ MODULE orng5_values INPUT.
       searchhelp = 'ZHRBR_SH001'.
 
 ENDMODULE.                 " ORNG2_VALUES  INPUT
+*&---------------------------------------------------------------------*
+*&      Module  ORNG6_VALUES  INPUT
+*&---------------------------------------------------------------------*
+MODULE orng6_values INPUT.
+
+  CALL FUNCTION 'F4IF_FIELD_VALUE_REQUEST'
+    EXPORTING
+      tabname    = 'P9950'
+      fieldname  = 'ORNG6'
+      searchhelp = 'ZHRBR_SH001'.
+
+ENDMODULE.                 " ORNG2_VALUES  INPUT
+*&---------------------------------------------------------------------*
+*&      Module  ORNG7_VALUES  INPUT
+*&---------------------------------------------------------------------*
+MODULE orng7_values INPUT.
+
+  CALL FUNCTION 'F4IF_FIELD_VALUE_REQUEST'
+    EXPORTING
+      tabname    = 'P9950'
+      fieldname  = 'ORNG7'
+      searchhelp = 'ZHRBR_SH001'.
+
+ENDMODULE.                 " ORNG2_VALUES  INPUT
+*&---------------------------------------------------------------------*
+*&      Module  ORNG8_VALUES  INPUT
+*&---------------------------------------------------------------------*
+MODULE orng8_values INPUT.
+
+  CALL FUNCTION 'F4IF_FIELD_VALUE_REQUEST'
+    EXPORTING
+      tabname    = 'P9950'
+      fieldname  = 'ORNG8'
+      searchhelp = 'ZHRBR_SH001'.
+
+ENDMODULE.                 " ORNG2_VALUES  INPUT
+*&---------------------------------------------------------------------*
+*&      Module  ORNG9_VALUES  INPUT
+*&---------------------------------------------------------------------*
+MODULE orng9_values INPUT.
+
+  CALL FUNCTION 'F4IF_FIELD_VALUE_REQUEST'
+    EXPORTING
+      tabname    = 'P9950'
+      fieldname  = 'ORNG9'
+      searchhelp = 'ZHRBR_SH001'.
+
+ENDMODULE.                 " ORNG9_VALUES  INPUT
 
 *&SPWIZARD: OUTPUT MODULE FOR TS 'TABS'. DO NOT CHANGE THIS LINE!
 *&SPWIZARD: SETS ACTIVE TAB

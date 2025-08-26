@@ -1,6 +1,6 @@
 *---------------------------------------------------------------------*
 *    program for:   VIEWPROC_ZHRBR_V004
-*   generation date: 13.01.2020 at 21:03:20
+*   generation date: 27.01.2022 at 17:16:32
 *   view maintenance generator version: #001407#
 *---------------------------------------------------------------------*
 FUNCTION VIEWPROC_ZHRBR_V004           .

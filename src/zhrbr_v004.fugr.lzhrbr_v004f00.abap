@@ -1,6 +1,6 @@
 *---------------------------------------------------------------------*
 *    view related FORM routines
-*   generation date: 13.01.2020 at 21:03:20
+*   generation date: 27.01.2022 at 17:16:32
 *   view maintenance generator version: #001407#
 *---------------------------------------------------------------------*
 *...processing: ZHRBR_V004......................................*
@@ -24,8 +24,8 @@ ZHRBR_V004-BEGDA =
 ZHRBR_T004-BEGDA .
 ZHRBR_V004-ENDDA =
 ZHRBR_T004-ENDDA .
-ZHRBR_V004-NETBR =
-ZHRBR_T004-NETBR .
+ZHRBR_V004-LGART_NT =
+ZHRBR_T004-LGART_NT .
 ZHRBR_V004-ISLEM =
 ZHRBR_T004-ISLEM .
 <VIM_TOTAL_STRUC> = ZHRBR_V004.
@@ -100,8 +100,8 @@ ZHRBR_T004-BEGDA =
 ZHRBR_V004-BEGDA .
 ZHRBR_T004-ENDDA =
 ZHRBR_V004-ENDDA .
-ZHRBR_T004-NETBR =
-ZHRBR_V004-NETBR .
+ZHRBR_T004-LGART_NT =
+ZHRBR_V004-LGART_NT .
 ZHRBR_T004-ISLEM =
 ZHRBR_V004-ISLEM .
     IF SY-SUBRC = 0.
@@ -141,8 +141,8 @@ ZHRBR_V004-BEGDA =
 ZHRBR_T004-BEGDA .
 ZHRBR_V004-ENDDA =
 ZHRBR_T004-ENDDA .
-ZHRBR_V004-NETBR =
-ZHRBR_T004-NETBR .
+ZHRBR_V004-LGART_NT =
+ZHRBR_T004-LGART_NT .
 ZHRBR_V004-ISLEM =
 ZHRBR_T004-ISLEM .
 ENDFORM.

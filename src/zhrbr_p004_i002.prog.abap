@@ -1,0 +1,29 @@
+*&---------------------------------------------------------------------*
+*& Include          ZHRBR_P004_I002
+*&---------------------------------------------------------------------*
+TABLES : p0001.
+SELECTION-SCREEN BEGIN OF BLOCK b2 WITH FRAME TITLE TEXT-s02.
+PARAMETERS : rb_ins RADIOBUTTON GROUP rb1 DEFAULT 'X' USER-COMMAND rb,
+             rb_del RADIOBUTTON GROUP rb1.
+SELECTION-SCREEN END OF BLOCK b2.
+
+SELECTION-SCREEN BEGIN OF BLOCK b4 WITH FRAME TITLE TEXT-s04.
+PARAMETERS : rb_sabit RADIOBUTTON GROUP rb2 DEFAULT 'X' USER-COMMAND rb2,
+             rb_yuzde RADIOBUTTON GROUP rb2,
+             rb_kesnt RADIOBUTTON GROUP rb2.
+SELECTION-SCREEN END OF BLOCK b4.
+
+SELECTION-SCREEN BEGIN OF BLOCK b1 WITH FRAME TITLE TEXT-s01.
+PARAMETERS : p_file LIKE rlgrap-filename MODIF ID 01 DEFAULT 'Borçlar.xls'.
+" selection screen kısmında fonksyonel tuş oluşturma
+SELECTION-SCREEN SKIP.
+SELECTION-SCREEN : FUNCTION KEY 1.
+SELECTION-SCREEN END   OF BLOCK b1 .
+
+SELECTION-SCREEN BEGIN OF BLOCK b3 WITH FRAME TITLE TEXT-s03.
+*PARAMETERS     : p_aedtm TYPE pa0015-aedtm OBLIGATORY MODIF ID 02 DEFAULT sy-datum.
+SELECT-OPTIONS : s_datum FOR pa0015-aedtm OBLIGATORY MODIF ID 02 DEFAULT sy-datum,
+                 s_lgart FOR  pa0015-lgart MODIF ID 02
+      MATCHCODE OBJECT zhriga_sh025
+      no-DISPLAY .
+SELECTION-SCREEN END OF BLOCK b3.

@@ -7,12 +7,25 @@
     <DBAPL>P</DBAPL>
     <DBNA>PN</DBNA>
     <SUBC>1</SUBC>
+    <RSTAT>K</RSTAT>
     <RLOAD>T</RLOAD>
     <FIXPT>X</FIXPT>
     <LDBNAME>PNP</LDBNAME>
     <UCCHECK>X</UCCHECK>
    </PROGDIR>
    <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>H01</KEY>
+     <ENTRY>Nolu hesabımızdan aşağıda belirtiğimiz icra dosyalarına tahsilatlarını yapmanızı rica ederiz.</ENTRY>
+     <LENGTH>93</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>S01</KEY>
+     <ENTRY>Çıktı Parametreleri</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
     <item>
      <ID>R</ID>
      <ENTRY>İcra Talimat Çıktısı</ENTRY>

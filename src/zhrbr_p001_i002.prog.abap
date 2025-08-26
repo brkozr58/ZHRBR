@@ -15,8 +15,8 @@ PARAMETERS: p1_icrad TYPE zhrbr_de029 , "icra adı
             p1_dosno TYPE zhrbr_de019 , "dosya no
 *            p1_yonad TYPE emnam       , "yönetici adı
 *            p1_yonun TYPE stext       . "yönetici ünvanı
-            p1_imza1 TYPE persno MATCHCODE OBJECT prem.
-*            p1_imza2 TYPE persno MATCHCODE OBJECT prem.
+            p1_imza1 TYPE persno MATCHCODE OBJECT prem,
+            p1_imza2 TYPE persno MATCHCODE OBJECT prem.
 
 SELECTION-SCREEN END OF BLOCK b1.
 SELECTION-SCREEN END OF SCREEN 110.
@@ -28,8 +28,8 @@ PARAMETERS: p2_kytno TYPE zhrbr_de033 , "sayı
 *            p2_yonad TYPE emnam       , "yönetici adı
 *            p2_yonun TYPE stext       . "yönetici ünvanı
             p2_evtrh TYPE datum,
-            p2_imza1 TYPE persno MATCHCODE OBJECT prem.
-*            p2_imza2 TYPE persno MATCHCODE OBJECT prem.
+            p2_imza1 TYPE persno MATCHCODE OBJECT prem,
+            p2_imza2 TYPE persno MATCHCODE OBJECT prem.
 SELECTION-SCREEN END OF BLOCK b2.
 SELECTION-SCREEN END OF SCREEN 120.
 
@@ -40,8 +40,8 @@ PARAMETERS: p3_kytno TYPE zhrbr_de033 , "sayı
 *            p3_yonad TYPE emnam       , "yönetici adı
 *            p3_yonun TYPE stext       . "yönetici ünvanı
             p3_evtrh TYPE datum        , "evrak tarihi
-            p3_imza1 TYPE persno MATCHCODE OBJECT prem.
-*            p3_imza2 TYPE persno MATCHCODE OBJECT prem.
+            p3_imza1 TYPE persno MATCHCODE OBJECT prem,
+            p3_imza2 TYPE persno MATCHCODE OBJECT prem.
 SELECTION-SCREEN END OF BLOCK b3.
 SELECTION-SCREEN END OF SCREEN 130.
 
@@ -55,8 +55,8 @@ PARAMETERS: "p4_kytno TYPE zhrpa_de053 , "sayı
 *             p4_icryr TYPE zhrbr_de028 , "icra yeri
 *             p4_icry2 TYPE char200,
 *             p4_usrid TYPE sysid.
-             p4_imza1 TYPE persno MATCHCODE OBJECT prem.
-*             p4_imza2 TYPE persno MATCHCODE OBJECT prem.
+             p4_imza1 TYPE persno MATCHCODE OBJECT prem,
+             p4_imza2 TYPE persno MATCHCODE OBJECT prem.
 *            p4_yonad TYPE emnam       , "yönetici adı
 *            p4_yonun TYPE stext       . "yönetici ünvanı
 SELECTION-SCREEN END OF BLOCK b4.

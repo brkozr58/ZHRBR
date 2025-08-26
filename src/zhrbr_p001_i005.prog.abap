@@ -105,7 +105,7 @@ FORM set_110 .
     SELECT SINGLE icraa FROM zhrbr_t006 INTO l_icratnm
                             WHERE icrad EQ gs_9950-icrad.
     l_icrano = gs_9950-dosno.
-    CONCATENATE l_icratnm l_icrano TEXT-001
+    CONCATENATE l_icratnm l_icrano text-001
                 INTO l_context SEPARATED BY space.
     CLEAR : l_icratnm, l_icrano.
   ENDIF.
@@ -118,9 +118,9 @@ FORM set_110 .
     l_icrano = gs_9950-dosno.
     l_sirano = gs_9950-kessr.
     SHIFT l_sirano LEFT DELETING LEADING '0'.
-    CONCATENATE l_context l_sirano TEXT-002
+    CONCATENATE l_context l_sirano text-002
                                   INTO l_context SEPARATED BY space.
-    CONCATENATE l_context l_icratnm l_icrano TEXT-003
+    CONCATENATE l_context l_icratnm l_icrano text-003
                                   INTO l_context SEPARATED BY space.
     CLEAR : l_icratnm, l_icrano.
   ENDLOOP.
@@ -171,9 +171,9 @@ FORM set_110 .
     WRITE ls_9950-bborc TO l_sumic.
 *    l_sumic  = ls_9014-zhr_sum_ickl ."ls_9014-zhr_sum_ic.
 
-    CONCATENATE l_tabix TEXT-002 INTO l_sira.
-    CONCATENATE l_icratnm TEXT-005 INTO l_icratnm.
-    CONCATENATE l_sira l_icratnm l_icrano  TEXT-004
+    CONCATENATE l_tabix text-002 INTO l_sira.
+    CONCATENATE l_icratnm text-005 INTO l_icratnm.
+    CONCATENATE l_sira l_icratnm l_icrano  text-004
                 l_sumic 'TL' INTO lv_field SEPARATED BY space.
     CONDENSE lv_field.
     CONCATENATE '<<CONTENT' l_tabix '>>' INTO lv_counter.
@@ -194,6 +194,8 @@ FORM set_110 .
       EXIT.
     ENDIF.
   ENDDO.
+
+  gs_report-icrad = gs_9950-icrad.
   PERFORM icra_dairesi USING gs_9950-icrad
                     CHANGING gs_report-icraa
                              gs_report-icryr.
@@ -270,55 +272,30 @@ FORM set_110 .
   APPEND gs_word TO gt_word.
 
   SELECT SINGLE ename plans FROM pa0001 INTO (lv_yon1 , lv_pln1)
-                     WHERE pernr EQ p1_imza1
+                     WHERE pernr EQ p4_imza1
                        AND begda LE sy-datum
                        AND endda GE sy-datum .
 *
-*  SELECT SINGLE stext FROM hrp1000 INTO lv_unv1
-*                      WHERE otype EQ 'S'
-*                        AND objid EQ lv_pln1
-*                        AND langu EQ sy-langu
-*                        AND begda LE sy-datum
-*                        AND endda GE sy-datum .
+  SELECT SINGLE stext FROM hrp1000 INTO lv_unv1
+                      WHERE otype EQ 'S'
+                        AND objid EQ lv_pln1
+                        AND langu EQ sy-langu
+                        AND begda LE sy-datum
+                        AND endda GE sy-datum .
 *
-
-
-
-  DATA :lv_objid TYPE hrobjid,
-        lv_text2  TYPE text255.
-*
-*  SELECT SINGLE stext FROM hrp1000 INTO lv_unv1
-*                      WHERE otype EQ 'S'
-*                        AND objid EQ lv_pln1
-*                        AND langu EQ sy-langu
-*                        AND begda LE sy-datum
-*                        AND endda GE sy-datum .
-**
-*
-  lv_objid = lv_pln1.
-  CALL FUNCTION 'ZETHR_FG001_FM04'
-    EXPORTING
-      im_otype = 'S'
-      im_objid = lv_objid
-      im_datum = sy-datum
-    IMPORTING
-      i_text   = lv_text2.
-
 *
   gs_word-name = '<<IMZA>>'.
   gs_word-value = lv_yon1 ."gs_report-yonad.
   APPEND gs_word TO gt_word.
 *
   gs_word-name = '<<UNVAN>>'.
-  gs_word-value = lv_text2 ."gs_report-yonun.
+  gs_word-value = lv_unv1 ."gs_report-yonun.
   APPEND gs_word TO gt_word.
 
-*  SELECT SINGLE ename plans FROM pa0001 INTO (lv_yon2 , lv_pln2)
-*                   WHERE pernr EQ p1_imza2
-*                     AND begda LE sy-datum
-*                     AND endda GE sy-datum .
-
-
+  SELECT SINGLE ename plans FROM pa0001 INTO (lv_yon2 , lv_pln2)
+                   WHERE pernr EQ p1_imza2
+                     AND begda LE sy-datum
+                     AND endda GE sy-datum .
 
   SELECT SINGLE stext FROM hrp1000 INTO lv_unv2
                       WHERE otype EQ 'S'
@@ -547,49 +524,25 @@ FORM set_120 .
                        AND begda LE sy-datum
                        AND endda GE sy-datum .
 
-*  SELECT SINGLE stext FROM hrp1000 INTO lv_unv1
-*                      WHERE otype EQ 'S'
-*                        AND objid EQ lv_pln1
-*                        AND langu EQ sy-langu
-*                        AND begda LE sy-datum
-*                        AND endda GE sy-datum .
-
-
-
-
-  DATA :lv_objid TYPE hrobjid,
-        lv_text  TYPE text255.
-*
-*  SELECT SINGLE stext FROM hrp1000 INTO lv_unv1
-*                      WHERE otype EQ 'S'
-*                        AND objid EQ lv_pln1
-*                        AND langu EQ sy-langu
-*                        AND begda LE sy-datum
-*                        AND endda GE sy-datum .
-**
-*
-  lv_objid = lv_pln1.
-  CALL FUNCTION 'ZETHR_FG001_FM04'
-    EXPORTING
-      im_otype = 'S'
-      im_objid = lv_objid
-      im_datum = sy-datum
-    IMPORTING
-      i_text   = lv_text.
-
+  SELECT SINGLE stext FROM hrp1000 INTO lv_unv1
+                      WHERE otype EQ 'S'
+                        AND objid EQ lv_pln1
+                        AND langu EQ sy-langu
+                        AND begda LE sy-datum
+                        AND endda GE sy-datum .
 
   gs_word-name = '<<IMZA>>'.
   gs_word-value = lv_yon1 ."gs_report-yonad.
   APPEND gs_word TO gt_word.
 
   gs_word-name = '<<UNVAN>>'.
-  gs_word-value = lv_text ."gs_report-yonun.
+  gs_word-value = lv_unv1 ."gs_report-yonun.
   APPEND gs_word TO gt_word.
 
-*  SELECT SINGLE ename plans FROM pa0001 INTO (lv_yon2 , lv_pln2)
-*                   WHERE pernr EQ p2_imza2
-*                     AND begda LE sy-datum
-*                     AND endda GE sy-datum .
+  SELECT SINGLE ename plans FROM pa0001 INTO (lv_yon2 , lv_pln2)
+                   WHERE pernr EQ p2_imza2
+                     AND begda LE sy-datum
+                     AND endda GE sy-datum .
 
   SELECT SINGLE stext FROM hrp1000 INTO lv_unv2
                       WHERE otype EQ 'S'
@@ -606,8 +559,8 @@ FORM set_120 .
   gs_word-value = lv_unv2 .
   APPEND gs_word TO gt_word.
 
-  DATA: lv_bukr TYPE bukrs,
-        lv_butx TYPE butxt.
+  DATA:  lv_bukr TYPE bukrs,
+         lv_butx TYPE butxt.
 
   SELECT SINGLE  bukrs FROM pa0001 INTO lv_bukr
                      WHERE pernr EQ p_pernr
@@ -736,49 +689,25 @@ FORM set_130 .
                        AND begda LE sy-datum
                        AND endda GE sy-datum .
 
-*  SELECT SINGLE stext FROM hrp1000 INTO lv_unv1
-*                      WHERE otype EQ 'S'
-*                        AND objid EQ lv_pln1
-*                        AND langu EQ sy-langu
-*                        AND begda LE sy-datum
-*                        AND endda GE sy-datum .
-
-
-
-  DATA :lv_objid TYPE hrobjid,
-        lv_text  TYPE text255.
-*
-*  SELECT SINGLE stext FROM hrp1000 INTO lv_unv1
-*                      WHERE otype EQ 'S'
-*                        AND objid EQ lv_pln1
-*                        AND langu EQ sy-langu
-*                        AND begda LE sy-datum
-*                        AND endda GE sy-datum .
-**
-*
-  lv_objid = lv_pln1.
-  CALL FUNCTION 'ZETHR_FG001_FM04'
-    EXPORTING
-      im_otype = 'S'
-      im_objid = lv_objid
-      im_datum = sy-datum
-    IMPORTING
-      i_text   = lv_text.
-
-
+  SELECT SINGLE stext FROM hrp1000 INTO lv_unv1
+                      WHERE otype EQ 'S'
+                        AND objid EQ lv_pln1
+                        AND langu EQ sy-langu
+                        AND begda LE sy-datum
+                        AND endda GE sy-datum .
 
   gs_word-name = '<<IMZA>>'.
   gs_word-value = lv_yon1 ."gs_report-yonad.
   APPEND gs_word TO gt_word.
 
   gs_word-name = '<<UNVAN>>'.
-  gs_word-value = lv_text ."gs_report-yonun.
+  gs_word-value = lv_unv1 ."gs_report-yonun.
   APPEND gs_word TO gt_word.
-*
-*  SELECT SINGLE ename plans FROM pa0001 INTO (lv_yon2 , lv_pln2)
-*                     WHERE pernr EQ p3_imza2
-*                       AND begda LE sy-datum
-*                       AND endda GE sy-datum .
+
+  SELECT SINGLE ename plans FROM pa0001 INTO (lv_yon2 , lv_pln2)
+                     WHERE pernr EQ p3_imza2
+                       AND begda LE sy-datum
+                       AND endda GE sy-datum .
 
   SELECT SINGLE stext FROM hrp1000 INTO lv_unv2
                       WHERE otype EQ 'S'
@@ -794,8 +723,8 @@ FORM set_130 .
   gs_word-name = '<<UNVAN2>>'.
   gs_word-value = lv_unv2 ."gs_report-yonun.
   APPEND gs_word TO gt_word.
-  DATA: lv_bukr TYPE bukrs,
-        lv_butx TYPE butxt.
+  DATA:  lv_bukr TYPE bukrs,
+         lv_butx TYPE butxt.
 
   SELECT SINGLE  bukrs FROM pa0001 INTO lv_bukr
                      WHERE pernr EQ p_pernr
@@ -982,8 +911,7 @@ FORM set_140 .
       endda = sy-datum
     IMPORTING
       icodm = lv_odmtr.
-*  lv_dec = s9950-icrtr - lv_odmtr.
-  lv_dec = lv_odmtr.
+  lv_dec = s9950-icrtr - lv_odmtr.
 *  dl2 = s_9950-icrtr - lv_odmtr.
 *  lv_dec = dl2.
 *  WRITE dl2 TO dl.
@@ -995,8 +923,7 @@ FORM set_140 .
 
   CLEAR: dl, dl2, lv_dec.
   lv_dec = s9950-icrtr - lv_odmtr.
-  WRITE lv_dec TO dl NO-GAP.
-
+*  WRITE s9014-zhr_sum_ickl TO dl.
   gs_word-name = '<<KALANICRA>>'.
   gs_word-value = dl.
   CONDENSE gs_word-value NO-GAPS .
@@ -1009,42 +936,31 @@ FORM set_140 .
          lv_unv1 TYPE stext,
          lv_unv2 TYPE stext.
 
-  DATA :lv_objid TYPE hrobjid,
-        lv_text  TYPE text255.
   SELECT SINGLE ename plans FROM pa0001 INTO (lv_yon1 , lv_pln1)
                      WHERE pernr EQ p4_imza1
                        AND begda LE sy-datum
                        AND endda GE sy-datum .
 *
-*  SELECT SINGLE stext FROM hrp1000 INTO lv_unv1
-*                      WHERE otype EQ 'S'
-*                        AND objid EQ lv_pln1
-*                        AND langu EQ sy-langu
-*                        AND begda LE sy-datum
-*                        AND endda GE sy-datum .
-**
+  SELECT SINGLE stext FROM hrp1000 INTO lv_unv1
+                      WHERE otype EQ 'S'
+                        AND objid EQ lv_pln1
+                        AND langu EQ sy-langu
+                        AND begda LE sy-datum
+                        AND endda GE sy-datum .
 *
-  lv_objid = lv_pln1.
-  CALL FUNCTION 'ZETHR_FG001_FM04'
-    EXPORTING
-      im_otype = 'S'
-      im_objid = lv_objid
-      im_datum = sy-datum
-    IMPORTING
-      i_text   = lv_text.
-
+*
   gs_word-name = '<<IMZA>>'.
   gs_word-value = lv_yon1 ."gs_report-yonad.
   APPEND gs_word TO gt_word.
 *
   gs_word-name = '<<UNVAN>>'.
-  gs_word-value = lv_text ."gs_report-yonun.
+  gs_word-value = lv_unv1 ."gs_report-yonun.
   APPEND gs_word TO gt_word.
 
-*  SELECT SINGLE ename plans FROM pa0001 INTO (lv_yon2 , lv_pln2)
-*                     WHERE pernr EQ p4_imza2
-*                       AND begda LE sy-datum
-*                       AND endda GE sy-datum .
+  SELECT SINGLE ename plans FROM pa0001 INTO (lv_yon2 , lv_pln2)
+                     WHERE pernr EQ p4_imza2
+                       AND begda LE sy-datum
+                       AND endda GE sy-datum .
 
   SELECT SINGLE stext FROM hrp1000 INTO lv_unv2
                       WHERE otype EQ 'S'
@@ -1061,8 +977,8 @@ FORM set_140 .
   gs_word-name = '<<UNVAN2>>'.
   gs_word-value = lv_unv2 ."gs_report-yonun.
   APPEND gs_word TO gt_word.
-  DATA: lv_bukr TYPE bukrs,
-        lv_butx TYPE butxt.
+  DATA:  lv_bukr TYPE bukrs,
+         lv_butx TYPE butxt.
 
   SELECT SINGLE  bukrs FROM pa0001 INTO lv_bukr
                      WHERE pernr EQ p_pernr
@@ -1124,7 +1040,7 @@ FORM control .
   ENDLOOP.
 
   CHECK lv_alert IS NOT INITIAL.
-  MESSAGE TEXT-e01 TYPE 'I' DISPLAY LIKE 'E'.
+  MESSAGE text-e01 TYPE 'I' DISPLAY LIKE 'E'.
   gv_error = abap_true.
 ENDFORM.                    "control
 *&---------------------------------------------------------------------*

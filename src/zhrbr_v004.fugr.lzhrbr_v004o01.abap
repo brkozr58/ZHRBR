@@ -15,6 +15,10 @@ MODULE set_text OUTPUT.
                                   AND molga EQ '47'
                                   AND lgart EQ zhrbr_v004-lgart.
 
+  SELECT SINGLE lgtxt FROM t512t INTO gs_text-lgart_net_t
+                                WHERE sprsl EQ sy-langu
+                                  AND molga EQ '47'
+                                  AND lgart EQ zhrbr_v004-lgart_nt.
 
   SELECT SINGLE butxt FROM t001 INTO gs_text-bukrs_t
                                 WHERE bukrs EQ zhrbr_v004-bukrs.

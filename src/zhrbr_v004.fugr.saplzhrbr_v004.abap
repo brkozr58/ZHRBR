@@ -1,9 +1,9 @@
-* regenerated at 13.01.2020 21:03:20
+* regenerated at 27.01.2022 17:16:33
 *******************************************************************
 *   System-defined Include-files.                                 *
 *******************************************************************
-  INCLUDE LZHRBR_V004TOP.                    " Global Data
-  INCLUDE LZHRBR_V004UXX.                    " Function Modules
+  INCLUDE lzhrbr_v004top.                    " Global Declarations
+  INCLUDE lzhrbr_v004uxx.                    " Function Modules
 
 *******************************************************************
 *   User-defined Include-files (if necessary).                    *
@@ -14,10 +14,10 @@
 * INCLUDE LZHRBR_V004E...                    " Events
 * INCLUDE LZHRBR_V004P...                    " Local class implement.
 * INCLUDE LZHRBR_V004T99.                    " ABAP Unit tests
-  INCLUDE LZHRBR_V004F00                          . " subprograms
-  INCLUDE LZHRBR_V004I00                          . " PAI modules
-  INCLUDE LSVIMFXX                                . " subprograms
-  INCLUDE LSVIMOXX                                . " PBO modules
-  INCLUDE LSVIMIXX                                . " PAI modules
+  INCLUDE lzhrbr_v004f00                          . " subprograms
+  INCLUDE lzhrbr_v004i00                          . " PAI modules
+  INCLUDE lsvimfxx                                . " subprograms
+  INCLUDE lsvimoxx                                . " PBO modules
+  INCLUDE lsvimixx                                . " PAI modules
 
-INCLUDE lzhrbr_v004o01.
+  INCLUDE lzhrbr_v004o01.

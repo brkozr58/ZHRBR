@@ -4,14 +4,8 @@ class ZCL_HRPA_INFOTYPE_9951 definition
   create public .
 
 public section.
-*"* public components of class ZCL_HRPA_INFOTYPE_9951
-*"* do not include other source files here!!!
 protected section.
-*"* protected components of class ZCL_HRPA_INFOTYPE_9951
-*"* do not include other source files here!!!
 private section.
-*"* private components of class ZCL_HRPA_INFOTYPE_9951
-*"* do not include other source files here!!!
 ENDCLASS.
 
 

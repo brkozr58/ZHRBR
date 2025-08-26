@@ -293,8 +293,8 @@
       <DESCRIPT>Görünüm bakımı: Genel bakış ekranı ZHRBR_V004</DESCRIPT>
       <TYPE>N</TYPE>
       <NEXTSCREEN>0001</NEXTSCREEN>
-      <LINES>060</LINES>
-      <COLUMNS>182</COLUMNS>
+      <LINES>061</LINES>
+      <COLUMNS>255</COLUMNS>
      </HEADER>
      <CONTAINERS>
       <RPY_DYCATT>
@@ -307,7 +307,7 @@
        <ELEMENT_OF>SCREEN</ELEMENT_OF>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
-       <LENGTH>182</LENGTH>
+       <LENGTH>255</LENGTH>
        <HEIGHT>059</HEIGHT>
        <C_RESIZE_V>X</C_RESIZE_V>
        <C_RESIZE_H>X</C_RESIZE_H>
@@ -332,7 +332,7 @@
        <TYPE>PUSH_TMPL</TYPE>
        <NAME>VIM_POSI_PUSH</NAME>
        <TEXT>____________________</TEXT>
-       <LINE>060</LINE>
+       <LINE>061</LINE>
        <COLUMN>019</COLUMN>
        <LENGTH>020</LENGTH>
        <VISLENGTH>020</VISLENGTH>
@@ -348,7 +348,7 @@
        <TYPE>TEMPLATE</TYPE>
        <NAME>VIM_POSITION_INFO</NAME>
        <TEXT>______________________________</TEXT>
-       <LINE>060</LINE>
+       <LINE>061</LINE>
        <COLUMN>040</COLUMN>
        <LENGTH>030</LENGTH>
        <VISLENGTH>030</VISLENGTH>
@@ -393,11 +393,11 @@
        <CONT_NAME>TCTRL_ZHRBR_V004</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZHRBR_V004-ORNGR</NAME>
-       <TEXT>Oran_Gr____________________________</TEXT>
+       <TEXT>Oran_Gr_____________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
-       <LENGTH>035</LENGTH>
-       <VISLENGTH>007</VISLENGTH>
+       <LENGTH>036</LENGTH>
+       <VISLENGTH>010</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
@@ -409,7 +409,7 @@
        <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
        <CONT_NAME>TCTRL_ZHRBR_V004</CONT_NAME>
        <TYPE>TEXT</TYPE>
-       <NAME>ORNTNM</NAME>
+       <NAME>*GS_TEXT-ORNGR_T</NAME>
        <TEXT>Oran_Gr._Tanım</TEXT>
        <LINE>001</LINE>
        <COLUMN>002</COLUMN>
@@ -429,7 +429,7 @@
        <LINE>001</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>040</LENGTH>
-       <VISLENGTH>008</VISLENGTH>
+       <VISLENGTH>004</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
@@ -457,15 +457,15 @@
        <CONT_NAME>TCTRL_ZHRBR_V004</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZHRBR_V004-LGART</NAME>
-       <TEXT>Ücr.türü________________________________</TEXT>
+       <TEXT>Brüt_Ücret______________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>005</COLUMN>
        <LENGTH>040</LENGTH>
-       <VISLENGTH>009</VISLENGTH>
+       <VISLENGTH>010</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>4</MODIFIC>
+       <MODIFIC>F</MODIFIC>
        <REQU_ENTRY>N</REQU_ENTRY>
        <TC_HEADING>X</TC_HEADING>
       </RPY_DYFATC>
@@ -474,10 +474,10 @@
        <CONT_NAME>TCTRL_ZHRBR_V004</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*GS_TEXT-LGART_T</NAME>
-       <TEXT>Ücret_Tanımı</TEXT>
+       <TEXT>Brüt_Ücret</TEXT>
        <LINE>001</LINE>
        <COLUMN>006</COLUMN>
-       <LENGTH>012</LENGTH>
+       <LENGTH>010</LENGTH>
        <VISLENGTH>015</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <FORMAT>CHAR</FORMAT>
@@ -489,11 +489,11 @@
        <CONT_NAME>TCTRL_ZHRBR_V004</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZHRBR_V004-BEGDA</NAME>
-       <TEXT>Başlangıç_T.________________________</TEXT>
+       <TEXT>Başlangıç</TEXT>
        <LINE>001</LINE>
        <COLUMN>007</COLUMN>
-       <LENGTH>036</LENGTH>
-       <VISLENGTH>012</VISLENGTH>
+       <LENGTH>009</LENGTH>
+       <VISLENGTH>010</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
@@ -506,11 +506,11 @@
        <CONT_NAME>TCTRL_ZHRBR_V004</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZHRBR_V004-ENDDA</NAME>
-       <TEXT>Bitiş_T.______________________</TEXT>
+       <TEXT>Bitiş______________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>008</COLUMN>
-       <LENGTH>030</LENGTH>
-       <VISLENGTH>012</VISLENGTH>
+       <LENGTH>027</LENGTH>
+       <VISLENGTH>010</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
@@ -522,16 +522,31 @@
        <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
        <CONT_NAME>TCTRL_ZHRBR_V004</CONT_NAME>
        <TYPE>TEXT</TYPE>
-       <NAME>*ZHRBR_V004-NETBR</NAME>
-       <TEXT>Net/Brüt________________________________</TEXT>
+       <NAME>*ZHRBR_V004-LGART_NT</NAME>
+       <TEXT>Net_Ücret____________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>009</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>017</VISLENGTH>
+       <LENGTH>037</LENGTH>
+       <VISLENGTH>010</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>4</MODIFIC>
+       <MODIFIC>F</MODIFIC>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <TC_HEADING>X</TC_HEADING>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
+       <CONT_NAME>TCTRL_ZHRBR_V004</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>*GS_TEXT-LGART_NET_T</NAME>
+       <TEXT>Net_Ücret</TEXT>
+       <LINE>001</LINE>
+       <COLUMN>010</COLUMN>
+       <LENGTH>009</LENGTH>
+       <VISLENGTH>015</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>CHAR</FORMAT>
        <REQU_ENTRY>N</REQU_ENTRY>
        <TC_HEADING>X</TC_HEADING>
       </RPY_DYFATC>
@@ -542,9 +557,9 @@
        <NAME>*ZHRBR_V004-ISLEM</NAME>
        <TEXT>İşlem___________________________________</TEXT>
        <LINE>001</LINE>
-       <COLUMN>010</COLUMN>
+       <COLUMN>011</COLUMN>
        <LENGTH>040</LENGTH>
-       <VISLENGTH>010</VISLENGTH>
+       <VISLENGTH>030</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
@@ -575,7 +590,7 @@
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>002</LENGTH>
-       <VISLENGTH>007</VISLENGTH>
+       <VISLENGTH>010</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <GROUP1>KEY</GROUP1>
        <FORMAT>NUMC</FORMAT>
@@ -610,7 +625,7 @@
        <LINE>001</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>004</LENGTH>
-       <VISLENGTH>008</VISLENGTH>
+       <VISLENGTH>004</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <GROUP1>KEY</GROUP1>
        <FORMAT>CHAR</FORMAT>
@@ -645,7 +660,7 @@
        <LINE>001</LINE>
        <COLUMN>005</COLUMN>
        <LENGTH>004</LENGTH>
-       <VISLENGTH>009</VISLENGTH>
+       <VISLENGTH>010</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <GROUP1>KEY</GROUP1>
        <FORMAT>CHAR</FORMAT>
@@ -653,7 +668,6 @@
        <MODIFIC>X</MODIFIC>
        <OUTPUT_FLD>X</OUTPUT_FLD>
        <REQU_ENTRY>N</REQU_ENTRY>
-       <MATCHCODE>ZHRBR_SH003</MATCHCODE>
       </RPY_DYFATC>
       <RPY_DYFATC>
        <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
@@ -680,7 +694,7 @@
        <LINE>001</LINE>
        <COLUMN>007</COLUMN>
        <LENGTH>010</LENGTH>
-       <VISLENGTH>012</VISLENGTH>
+       <VISLENGTH>010</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <GROUP1>KEY</GROUP1>
        <FORMAT>DATS</FORMAT>
@@ -698,7 +712,7 @@
        <LINE>001</LINE>
        <COLUMN>008</COLUMN>
        <LENGTH>010</LENGTH>
-       <VISLENGTH>012</VISLENGTH>
+       <VISLENGTH>010</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <FORMAT>DATS</FORMAT>
        <FROM_DICT>X</FROM_DICT>
@@ -710,20 +724,34 @@
        <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
        <CONT_NAME>TCTRL_ZHRBR_V004</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
-       <NAME>ZHRBR_V004-NETBR</NAME>
-       <TEXT>_</TEXT>
-       <DROPDOWN>L</DROPDOWN>
+       <NAME>ZHRBR_V004-LGART_NT</NAME>
+       <TEXT>____</TEXT>
        <LINE>001</LINE>
        <COLUMN>009</COLUMN>
-       <LENGTH>001</LENGTH>
-       <VISLENGTH>017</VISLENGTH>
+       <LENGTH>004</LENGTH>
+       <VISLENGTH>010</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <MODIFIC>X</MODIFIC>
        <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
-       <DICT_I_VAL>X</DICT_I_VAL>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
+       <CONT_NAME>TCTRL_ZHRBR_V004</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>GS_TEXT-LGART_NET_T</NAME>
+       <TEXT>________________________________________</TEXT>
+       <ROLLING>X</ROLLING>
+       <LINE>001</LINE>
+       <COLUMN>010</COLUMN>
+       <LENGTH>040</LENGTH>
+       <VISLENGTH>015</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>CHAR</FORMAT>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+       <REQU_ENTRY>N</REQU_ENTRY>
       </RPY_DYFATC>
       <RPY_DYFATC>
        <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
@@ -733,9 +761,9 @@
        <TEXT>_</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>001</LINE>
-       <COLUMN>010</COLUMN>
+       <COLUMN>011</COLUMN>
        <LENGTH>001</LENGTH>
-       <VISLENGTH>010</VISLENGTH>
+       <VISLENGTH>030</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
@@ -746,7 +774,6 @@
       </RPY_DYFATC>
      </FIELDS>
      <FLOW_LOGIC>
-      <RPY_DYFLOW/>
       <RPY_DYFLOW>
        <LINE>PROCESS BEFORE OUTPUT.</LINE>
       </RPY_DYFLOW>
@@ -805,7 +832,7 @@
        <LINE>      FIELD zhrbr_v004-endda .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v004-netbr .</LINE>
+       <LINE>      FIELD zhrbr_v004-lgart_nt .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>      FIELD zhrbr_v004-islem .</LINE>

@@ -95,11 +95,9 @@ CLASS lcl_report IMPLEMENTATION.
     SELECT SINGLE ename bukrs FROM pa0001 INTO (gs_report-ename, gs_report-bukrs)
                               WHERE pernr EQ p_pernr
                                 AND begda LE sy-datum
-                                AND endda GE sy-datum.
-
+                                AND endda EQ '99991231'.
     SELECT SINGLE merni FROM pa0770 INTO gs_report-merni
                               WHERE pernr EQ p_pernr
-                                AND subty EQ '01'
                                 AND begda LE sy-datum
                                 AND endda EQ '99991231'.
 **** Comment EG EGULDAL 14.04.2016

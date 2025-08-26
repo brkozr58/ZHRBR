@@ -5,7 +5,7 @@
    <VSEOCLASS>
     <CLSNAME>ZCL_HRPA_INFOTYPE_9950</CLSNAME>
     <LANGU>T</LANGU>
-    <DESCRIPT>Bilgi tipi için kontrol sınıfı 9950</DESCRIPT>
+    <DESCRIPT>Bilgi tipi için kontrol sınıfı 9950 9950-Borçlar</DESCRIPT>
     <STATE>1</STATE>
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>

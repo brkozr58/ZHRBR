@@ -28,7 +28,7 @@ FORM borc_hesaplama .
 *--------------------------------------------------------------------*
   DATA : BEGIN OF s9950 .
            INCLUDE TYPE pa9950.
-           DATA : icksr TYPE zhrbr_de001,
+  DATA :   icksr TYPE zhrbr_de001,
            kaluc TYPE zhrbr_de002,
            ksluc TYPE zhrbr_de031,
          END OF s9950.
@@ -50,6 +50,7 @@ FORM borc_hesaplama .
   DATA : gv_ctp  TYPE betrg.                "Kontrol Toplam İcra
   DATA : gv_odm  TYPE betrg.                "Ödenen İcra
   DATA : gv_kln  TYPE betrg.                "Kalan  İcra
+  DATA : gv_kln2  TYPE betrg.                "Kalan  İcra
   DATA : gv_odc  TYPE betrg.                "Ödenecek  Tutar
   DATA : gv_ksk  TYPE betrg.                "Kesilemeyen Kesinti
 
@@ -109,16 +110,6 @@ FORM borc_hesaplama .
   CLEAR:gv_sbt , gv_nxt , gv_ksk.
 
   LOOP AT t9950 INTO s9950.
-*    READ TABLE gt_man INTO gs_man WITH KEY pernr = pernr-pernr
-*                                           icrid = s9950-icrid.
-*    IF sy-subrc IS INITIAL.
-*
-*    ENDIF.
-
-*    LOOP AT gt_man INTO gs_man WHERE pernr   EQ pernr-pernr
-*                                 AND  icrid  EQ s9950-icrid
-*                                 AND  bordro IS INITIAL.
-
     SELECT SINGLE * FROM zhrbr_t002 INTO s002
                                    WHERE bukrs EQ pernr-bukrs
                                      AND subty EQ s9950-subty.
@@ -185,52 +176,29 @@ FORM borc_hesaplama .
       ELSE.
         gv_odc = gv_ks1.
         IF gs_man-manue EQ 'X'.
-          gv_odc = gs_man-odmtr."Manuel Ödemeyse değiştirme
+*          gv_odc = gs_man-odmtr."Manuel Ödemeyse değiştirme
+          gv_odc = gv_odc + gs_man-odmtr."Manuel Ödemeyse değiştirme "01.10.2024
         ENDIF.
         gv_oks = gv_oks - gv_odc.
 *        gv_odc = trunc( gv_odc ).
 **************        << repair add bozer 191120
-        DATA : lv_odc TYPE betrg   .
+        DATA : lv_odc TYPE i   .
         lv_odc  = gv_odc.
         gv_odc = lv_odc.
 **************
       ENDIF.
     ELSE.   " Diğer kesintiler
-      CLEAR : p0000 .
-      LOOP AT p0000 WHERE stat2 NE '3'
-                      AND begda LE aper-endda
-                      AND endda GE aper-begda.
-      ENDLOOP.
-      .
-      IF sy-subrc IS INITIAL AND
-      ( s9950-subty EQ '3810' OR
-        s9950-subty EQ '3820' ) .
+      gv_top = ( s9950-icrtr + s9950-faizt )."Toplam İcra
+      gv_kln = gv_top -  gv_odm .             "Kalan  İcra "..
 
-        gv_top = ( s9950-icrtr + s9950-faizt )."Toplam İcra
-        gv_kln = gv_top - gv_odm .             "Kalan  İcra
+      IF gv_kln LT s9950-tkstt.
+        s9950-tkstt = gv_kln."Kalan taksitden daha az kaldıysa kalanı al
+      ENDIF.
 
-        IF gv_ynet GE gv_kln.
-          gv_odc = gv_kln.
-        ELSE.
-
-          gv_odc = gv_ynet .
-        ENDIF.
-
-
+      IF s9950-tkstt LE gv_ynet.
+        gv_odc = s9950-tkstt.
       ELSE.
-        gv_top = ( s9950-icrtr + s9950-faizt )."Toplam İcra
-        gv_kln = gv_top - gv_odm .             "Kalan  İcra
-
-        IF gv_kln LT s9950-tkstt.
-          s9950-tkstt = gv_kln.
-          "Kalan taksitden daha az kaldıysa kalanı al
-        ENDIF.
-
-        IF s9950-tkstt LE gv_ynet.
-          gv_odc = s9950-tkstt.
-        ELSE.
-          gv_odc = gv_ynet.
-        ENDIF.
+        gv_odc = gv_ynet.
       ENDIF.
     ENDIF.
 
@@ -239,17 +207,13 @@ FORM borc_hesaplama .
       "Manuel kesintiyi kesmesi için yapıldı.
       LOOP AT gt_man INTO gs_man WHERE icrid EQ s9950-icrid
                                    AND begda GE aper-begda
-                                   AND endda LE aper-endda
-*                                   AND bordro IS INITIAL
-        .
+                                   AND endda LE aper-endda.
       ENDLOOP.
       IF sy-subrc EQ 0.
         CLEAR gv_odc.
         LOOP AT gt_man INTO gs_man WHERE icrid EQ s9950-icrid
                                      AND begda GE aper-begda
-                                     AND endda LE aper-endda
-*                                     AND bordro IS INITIAL
-          .
+                                     AND endda LE aper-endda.
           gv_odc = gv_odc + gs_man-odmtr.
           "--->add code   ~ begin
           "Manuel Kesinti için batch kaydı oluşturmaması için yapıldı.
@@ -260,31 +224,15 @@ FORM borc_hesaplama .
 
     ENDIF.
 **********************************************************************
-
-    IF p0000 IS NOT INITIAL AND
-        ( s9950-subty EQ '3810' OR
-          s9950-subty EQ '3820' ) .
-
-      PERFORM add_it1 USING s9950-icrid   s9950-subty
-                         s9950-ksluc    s9950-ksluc
-                         gv_top gv_kln gv_odc  gv_abr  gv_ksk gv_apz.
-      gv_ynet = gv_ynet - gv_odc.
-      gv_sbt  = s9950-subty.
-
-
-    ELSE.
-
-      PERFORM add_it1 USING s9950-icrid   s9950-subty
+    PERFORM add_it1 USING s9950-icrid   s9950-subty
                          s9950-kaluc   s9950-ksluc
                          gv_top gv_kln gv_odc  gv_abr  gv_ksk gv_apz.
-      gv_ynet = gv_ynet - gv_odc.
-      gv_sbt  = s9950-subty.
-    ENDIF.
+    gv_ynet = gv_ynet - gv_odc.
+    gv_sbt  = s9950-subty.
 
-    CLEAR p0000.
-*    ENDIF.
-*    ENDLOOP.
+
   ENDLOOP.
+
 *--------------------------------------------------------------------*
 
 ENDFORM.                    " Borc_HESAPLAMA
@@ -359,7 +307,8 @@ FORM borc_bt_insert .
   DATA : t591  TYPE TABLE OF t591a.
   DATA : s591  TYPE t591a.
   DATA : lt_rt LIKE TABLE OF rt.
-  DATA : s_rt LIKE LINE OF lt_rt.
+
+  DATA: lv_betrg LIKE p9951-odmtr.
 
   CHECK tst_on EQ space.
 
@@ -375,47 +324,161 @@ FORM borc_bt_insert .
       CHECK sy-subrc EQ 0.
 
       IF h_bdc_adv IS INITIAL.
-        PERFORM bdc_init.
-        h_bdc_adv = 'X'.
+*        PERFORM bdc_init.
+*        h_bdc_adv = 'X'.
       ENDIF.
 
-      CLEAR : lv_btr , lv_bgd , lv_end.
+      CLEAR : lv_betrg , lv_bgd , lv_end.
 
       IF rt-betrg LT 0.
-        lv_btr = rt-betrg * -1.
+*        lv_btr = rt-betrg * -1.
+        lv_betrg = rt-betrg * -1.
       ELSE.
-        lv_btr = rt-betrg.
+*        lv_btr = rt-betrg.
+        lv_betrg = rt-betrg.
       ENDIF.
 *      lv_btr = rt-betrg.
       WRITE aper-begda TO lv_bgd.
       WRITE aper-endda TO lv_end.
-      SHIFT lv_btr LEFT DELETING LEADING space.
-      TRANSLATE lv_btr USING '.,'.
+*      SHIFT lv_btr LEFT DELETING LEADING space.
+*      TRANSLATE lv_btr USING '.,'.
 
-      REFRESH bdcdata.
-      PERFORM bdc_data_prog USING 'SAPMP50A'    '1000'      'X'.
-      PERFORM bdc_data_scrn USING 'RP50G-PERNR' pernr-pernr ' '.
-      PERFORM bdc_data_scrn USING 'RP50G-CHOIC' '9951'      ' '.
-      PERFORM bdc_data_scrn USING 'BDC_OKCODE'  '=INS'      ' '.
+      "yorum satırına alındı .
+*      REFRESH bdcdata.
+*      PERFORM bdc_data_prog USING 'SAPMP50A'    '1000'      'X'.
+*      PERFORM bdc_data_scrn USING 'RP50G-PERNR' pernr-pernr ' '.
+*      PERFORM bdc_data_scrn USING 'RP50G-CHOIC' '9951'      ' '.
+*      PERFORM bdc_data_scrn USING 'BDC_OKCODE'  '=INS'      ' '.
+*
+*      PERFORM bdc_data_prog USING 'MP995100'    '2000'      'X'.
+*      PERFORM bdc_data_scrn USING 'P9951-BEGDA' lv_bgd      ' '.
+*      PERFORM bdc_data_scrn USING 'P9951-ENDDA' lv_end      ' '.
+*      PERFORM bdc_data_scrn USING 'P9951-ICRID' v0-vinfo    ' '.
+*      PERFORM bdc_data_scrn USING 'P9951-ODMTR' lv_btr      ' '.
+*      PERFORM bdc_data_scrn USING 'BDC_OKCODE'  '=UPD'      ' '.
 
-      PERFORM bdc_data_prog USING 'MP995100'    '2000'      'X'.
-      PERFORM bdc_data_scrn USING 'P9951-BEGDA' lv_bgd      ' '.
-      PERFORM bdc_data_scrn USING 'P9951-ENDDA' lv_end      ' '.
-      PERFORM bdc_data_scrn USING 'P9951-ICRID' v0-vinfo    ' '.
-      PERFORM bdc_data_scrn USING 'P9951-ODMTR' lv_btr      ' '.
-      PERFORM bdc_data_scrn USING 'BDC_OKCODE'  '=UPD'      ' '.
+      "yorum satırına alındı .
+      DATA : ls_9951        TYPE p9951,
+             return         TYPE bapireturn1,
+             key            TYPE  bapipakey,
+             lv_beg         TYPE  begda,
+             lv_enda        TYPE  begda,
+             temp_btr       TYPE string,
+             lv_beg_temp    TYPE  begda,
+             lv_end_temp    TYPE  begda.
 
-      CALL FUNCTION 'BDC_INSERT'
+       CONCATENATE lv_bgd+6(4) lv_bgd+3(2) lv_bgd+0(2) INTO lv_beg .
+       CONCATENATE LV_end+6(4) lv_bgd+3(2) LV_end+0(2) INTO lv_enda .
+
+      DATA : s_9950 TYPE pa9950.
+      SELECT SINGLE * FROM pa9950 INTO  s_9950
+        WHERE pernr = pernr-pernr AND begda le lv_enda
+         AND icrid = v0-vinfo and endda GE lv_beg . "17.09.2024
+        DATA ls_9951_2 TYPE pa9951 .
+              SELECT SINGLE * FROM pa9951 INTO  ls_9951_2 "01.10.2024
+        WHERE pernr = pernr-pernr AND begda le lv_enda
+         AND icrid = v0-vinfo and endda GE lv_beg
+                and manue eq 'X'. ""01.10.2024
+                IF sy-subrc eq '0'."01.10.2024
+                  lv_betrg = lv_betrg - ls_9951_2-odmtr. "01.10.2024
+                ENDIF. "01.10.2024
+
+      ls_9951-infty = '9951' .
+      ls_9951-pernr = pernr-pernr .
+      ls_9951-begda = lv_beg .
+      ls_9951-endda = lv_enda . .
+      ls_9951-icrid = v0-vinfo .
+*       ls_9951-odmtr = s_9950-TKSTT .
+      ls_9951-odmtr = lv_betrg .
+
+*      temp_btr = lv_btr .
+*      REPLACE ',' WITH '.' INTO temp_btr .
+*      CONDENSE temp_btr .
+*      ls_9951-odmtr = temp_btr .
+
+      CALL FUNCTION 'HR_EMPLOYEE_ENQUEUE'
         EXPORTING
-          tcode     = 'PA30'
-        TABLES
-          dynprotab = bdcdata.
+          number = pernr-pernr
+        IMPORTING
+          return = return.
+
+      IF return-number IS INITIAL AND return-number EQ 0 .
+
+        DATA : s_9951 TYPE pa9951.
+        SELECT SINGLE * FROM pa9951 INTO s_9951
+        WHERE pernr = pernr-pernr AND begda = lv_beg AND
+              endda = lv_enda AND icrid = v0-vinfo .
+
+        .
+        IF sy-subrc EQ 0 .
+
+          DATA : s9951 TYPE p9951 .
+          s9951-infty = '9951' .
+          s9951-pernr = s_9951-pernr .
+          s9951-begda = lv_beg .
+          s9951-endda = lv_enda . .
+          s9951-icrid = s_9951-icrid .
+          s9951-odmtr = s_9951-odmtr .
+          s9951-subty = s_9951-subty .
+          s9951-seqnr = s_9951-seqnr .
+          s9951-aedtm = s_9951-aedtm .
+          s9951-uname = s_9951-uname.
+
+
+          CALL FUNCTION 'HR_INFOTYPE_OPERATION'
+            EXPORTING
+              infty         = '9951'
+              number        = s9951-pernr
+              subtype       = s9951-subty
+              validityend   = s9951-endda
+              validitybegin = s9951-begda
+              recordnumber  = s9951-seqnr
+              record        = s9951
+              operation     = 'DEL'
+              tclas         = 'A'
+              dialog_mode   = '0'
+            IMPORTING
+              return        = return
+              key           = key.
+
+
+        ENDIF.
+
+        CALL FUNCTION 'HR_INFOTYPE_OPERATION'
+          EXPORTING
+            infty         = '9951'
+            number        = pernr-pernr
+            validityend   = lv_enda
+            validitybegin = lv_beg
+*           RECORDNUMBER  =
+            record        = ls_9951
+            operation     = 'INS'
+            tclas         = 'A'
+            dialog_mode   = '0'
+          IMPORTING
+            return        = return
+            key           = key.
+
+
+        CALL FUNCTION 'HR_EMPLOYEE_DEQUEUE'
+          EXPORTING
+            number = pernr-pernr
+* IMPORTING
+*           RETURN =
+          .
+      ENDIF.
+*      CALL FUNCTION 'BDC_INSERT'
+*        EXPORTING
+*          tcode     = 'PA30'
+*        TABLES
+*          dynprotab = bdcdata.
 
       APPEND rt TO lt_rt.
       DELETE rt INDEX lv_tab.CLEAR lv_tab.
     ENDLOOP.
   ENDLOOP.
 
+  DATA : s_rt LIKE LINE OF lt_rt.
   LOOP AT lt_rt INTO s_rt.
     CLEAR : s_rt-v0typ , s_rt-v0znr.
     COLLECT s_rt INTO rt.
@@ -452,13 +515,13 @@ FORM bdc_init .
 
   DATA: btci_name LIKE apqi-groupid.
 
-  WRITE 'Z_BORCLAR' TO btci_name.
-
-  CALL FUNCTION 'BDC_OPEN_GROUP'
-    EXPORTING
-      client = sy-mandt
-      group  = btci_name
-      user   = sy-uname.
+*  WRITE 'Z_BORCLAR' TO btci_name.
+*
+*  CALL FUNCTION 'BDC_OPEN_GROUP'
+*    EXPORTING
+*      client = sy-mandt
+*      group  = btci_name
+*      user   = sy-uname.
 
 ENDFORM.                    " BDC_INIT
 *&---------------------------------------------------------------------*
