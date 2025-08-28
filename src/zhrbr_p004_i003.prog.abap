@@ -56,12 +56,17 @@ CLASS lcl_report DEFINITION.
 
 ENDCLASS.                    "lcl_report DEFINITION
 
+*----------------------------------------------------------------------*
+*       CLASS lcl_report IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
 CLASS lcl_report IMPLEMENTATION.
   METHOD set_init.
     " fonksyon tuşuna isim verme
     sc_fc01-icon_id          = '@49@' .
-    sc_fc01-quickinfo        = TEXT-001 .
-    sc_fc01-icon_text        = TEXT-001 .
+    sc_fc01-quickinfo        = text-001 .
+    sc_fc01-icon_text        = text-001 .
 
     sscrfields-functxt_01    = sc_fc01.
   ENDMETHOD.                    "set_init
@@ -78,7 +83,7 @@ CLASS lcl_report IMPLEMENTATION.
       ENDIF.
       MODIFY SCREEN.
     ENDLOOP.
-  ENDMETHOD.
+  ENDMETHOD.                    "modify_screen
   METHOD at_selection_screen.
     " selection screen kısmındaki fonksyonel tuşlara basılması
     IF sscrfields-ucomm EQ 'FC01'.
@@ -99,21 +104,21 @@ CLASS lcl_report IMPLEMENTATION.
 
     DEFINE gui_download.
       " Excel formatında kaydı
-      CONCATENATE ld_path &2 INTO ld_fullpath .
-      CALL FUNCTION 'GUI_DOWNLOAD'
-        EXPORTING
+      concatenate ld_path &2 into ld_fullpath .
+      call function 'GUI_DOWNLOAD'
+        exporting
           filename              = ld_fullpath
           filetype              = 'ASC'
 *         APPEND                = 'X'
           write_field_separator = 'X'
           confirm_overwrite     = 'X'
-        TABLES
+        tables
           data_tab              = &1     "need to declare and
           fieldnames            = gt_head[]
-        EXCEPTIONS
+        exceptions
           file_open_error       = 1
           file_write_error      = 2
-          OTHERS                = 3.
+          others                = 3.
     END-OF-DEFINITION.
 
     " dosyanın oluşturulması
@@ -130,7 +135,7 @@ CLASS lcl_report IMPLEMENTATION.
         user_action       = ld_result.
 
     IF sy-subrc <> 0.
-      MESSAGE TEXT-e02 TYPE 'E'.
+      MESSAGE text-e02 TYPE 'E'.
     ELSE.
       gv_sample_file = ld_fullpath.
     ENDIF.
@@ -155,12 +160,12 @@ CLASS lcl_report IMPLEMENTATION.
 
     ENDIF.
 
-  ENDMETHOD.
+  ENDMETHOD.                    "get_sample_excel_file
   METHOD get_samp_exc_file_headers.
     DEFINE add_head.
       gs_head-header = &1.
-      APPEND gs_head TO gt_head.
-      CLEAR  gs_head .
+      append gs_head to gt_head.
+      clear  gs_head .
     END-OF-DEFINITION.
     REFRESH gt_head.
     CASE 'X'.
@@ -216,11 +221,11 @@ CLASS lcl_report IMPLEMENTATION.
 
     ENDCASE.
 
-  ENDMETHOD.
+  ENDMETHOD.                    "get_samp_exc_file_headers
   METHOD get_samp_exc_file_datas.
 
 
-     CASE 'X'.
+    CASE 'X'.
       WHEN rb_sabit.
         ls_sabit-pernr = ''."'Personel Numarası',
         ls_sabit-subty = ''."'Alt Tip'  ,
@@ -277,14 +282,14 @@ CLASS lcl_report IMPLEMENTATION.
 
 
 
-  ENDMETHOD.
+  ENDMETHOD.                    "get_samp_exc_file_datas
   METHOD check_file_name.
     " dosyanın ismi girildi mi?
     IF p_file IS INITIAL.
-      MESSAGE TEXT-e01 TYPE 'E'.
+      MESSAGE text-e01 TYPE 'E'.
       EXIT.
     ENDIF.
-  ENDMETHOD.
+  ENDMETHOD.                    "check_file_name
   METHOD filename_get.
     DATA : filetable TYPE filetable,
            wa        TYPE file_table,
@@ -305,62 +310,62 @@ CLASS lcl_report IMPLEMENTATION.
     LOOP AT filetable INTO wa.
       p_file = wa-filename.
     ENDLOOP.
-  ENDMETHOD.
+  ENDMETHOD.                    "filename_get
   METHOD check_data.
     DATA: ls_mess   TYPE bapireturn1,
           ls_return TYPE bapireturn.
     DATA: ls_p0015 TYPE p0015.
     DATA : lv_pernr TYPE persno .
 
-      CASE 'X'.
-        WHEN rb_sabit.
-          LOOP AT  gt_sabit INTO gs_sabit .
-            CALL FUNCTION 'BAPI_EMPLOYEE_CHECKEXISTENCE'
-              EXPORTING
-                number = gs_sabit-pernr
-              IMPORTING
-                return = ls_return.
-            IF ls_return-type EQ 'E'.
-              MOVE ls_return-message TO gs_sabit-messa.
-              gs_sabit-icon = '@8O@'.
-              MODIFY gt_sabit FROM gs_sabit TRANSPORTING messa icon
-                                              WHERE pernr EQ gs_sabit-pernr.
-            ENDIF.
+    CASE 'X'.
+      WHEN rb_sabit.
+        LOOP AT  gt_sabit INTO gs_sabit .
+          CALL FUNCTION 'BAPI_EMPLOYEE_CHECKEXISTENCE'
+            EXPORTING
+              number = gs_sabit-pernr
+            IMPORTING
+              return = ls_return.
+          IF ls_return-type EQ 'E'.
+            MOVE ls_return-message TO gs_sabit-messa.
+            gs_sabit-icon = '@8O@'.
+            MODIFY gt_sabit FROM gs_sabit TRANSPORTING messa icon
+                                            WHERE pernr EQ gs_sabit-pernr.
+          ENDIF.
 
-          ENDLOOP.
-        WHEN rb_yuzde.
-          LOOP AT  gt_yuzde INTO gs_yuzde .
-            CALL FUNCTION 'BAPI_EMPLOYEE_CHECKEXISTENCE'
-              EXPORTING
-                number = gs_yuzde-pernr
-              IMPORTING
-                return = ls_return.
-            IF ls_return-type EQ 'E'.
-              MOVE ls_return-message TO gs_yuzde-messa.
-              gs_yuzde-icon = '@8O@'.
-              MODIFY gt_yuzde FROM gs_yuzde TRANSPORTING messa icon
-                                              WHERE pernr EQ gs_yuzde-pernr.
-            ENDIF.
+        ENDLOOP.
+      WHEN rb_yuzde.
+        LOOP AT  gt_yuzde INTO gs_yuzde .
+          CALL FUNCTION 'BAPI_EMPLOYEE_CHECKEXISTENCE'
+            EXPORTING
+              number = gs_yuzde-pernr
+            IMPORTING
+              return = ls_return.
+          IF ls_return-type EQ 'E'.
+            MOVE ls_return-message TO gs_yuzde-messa.
+            gs_yuzde-icon = '@8O@'.
+            MODIFY gt_yuzde FROM gs_yuzde TRANSPORTING messa icon
+                                            WHERE pernr EQ gs_yuzde-pernr.
+          ENDIF.
 
-          ENDLOOP.
-        WHEN rb_kesnt.
-          LOOP AT  gt_kesnt INTO gs_kesnt .
-            CALL FUNCTION 'BAPI_EMPLOYEE_CHECKEXISTENCE'
-              EXPORTING
-                number = gs_kesnt-pernr
-              IMPORTING
-                return = ls_return.
-            IF ls_return-type EQ 'E'.
-              MOVE ls_return-message TO gs_kesnt-messa.
-              gs_kesnt-icon = '@8O@'.
-              MODIFY gt_kesnt FROM gs_kesnt TRANSPORTING messa icon
-                                              WHERE pernr EQ gs_kesnt-pernr.
-            ENDIF.
-          ENDLOOP.
-      ENDCASE.
+        ENDLOOP.
+      WHEN rb_kesnt.
+        LOOP AT  gt_kesnt INTO gs_kesnt .
+          CALL FUNCTION 'BAPI_EMPLOYEE_CHECKEXISTENCE'
+            EXPORTING
+              number = gs_kesnt-pernr
+            IMPORTING
+              return = ls_return.
+          IF ls_return-type EQ 'E'.
+            MOVE ls_return-message TO gs_kesnt-messa.
+            gs_kesnt-icon = '@8O@'.
+            MODIFY gt_kesnt FROM gs_kesnt TRANSPORTING messa icon
+                                            WHERE pernr EQ gs_kesnt-pernr.
+          ENDIF.
+        ENDLOOP.
+    ENDCASE.
 
 
-  ENDMETHOD.
+  ENDMETHOD.                    "check_data
 
   METHOD set_texts.
 *    IF rb_ins EQ abap_true.
@@ -383,7 +388,7 @@ CLASS lcl_report IMPLEMENTATION.
 *      ENDLOOP.
 *    ENDIF.
 
-  ENDMETHOD.
+  ENDMETHOD.                    "set_texts
 
   METHOD prepare_alv.
     me->create_alv( ).
@@ -398,14 +403,14 @@ CLASS lcl_report IMPLEMENTATION.
     TRY.
 
 
-      CASE 'X'.
-        WHEN rb_sabit.
-          ASSIGN gt_sabit[] TO <table>.
-        WHEN rb_yuzde.
-          ASSIGN gt_yuzde[] TO <table>.
-        WHEN rb_kesnt.
-          ASSIGN gt_kesnt[] TO <table>.
-      ENDCASE.
+        CASE 'X'.
+          WHEN rb_sabit.
+            ASSIGN gt_sabit[] TO <table>.
+          WHEN rb_yuzde.
+            ASSIGN gt_yuzde[] TO <table>.
+          WHEN rb_kesnt.
+            ASSIGN gt_kesnt[] TO <table>.
+        ENDCASE.
 
         cl_salv_table=>factory(
                   IMPORTING
@@ -456,7 +461,7 @@ CLASS lcl_report IMPLEMENTATION.
     lo_header->create_header_information(
                     row    = 1
                     column = 1
-                    text   = TEXT-t01 )  . " Rapor ismi
+                    text   = text-t01 )  . " Rapor ismi
     lo_header->add_row( ).
 
     lo_grid_bottom = lo_header->create_grid(
@@ -466,8 +471,8 @@ CLASS lcl_report IMPLEMENTATION.
     lo_label = lo_grid_bottom->create_label(
                    row     = 1
                    column  = 1
-                   text    = TEXT-t02
-                   tooltip = TEXT-t02 ). " Tarih
+                   text    = text-t02
+                   tooltip = text-t02 ). " Tarih
 
     WRITE sy-datum TO lv_date DD/MM/YYYY.
     lo_text = lo_grid_bottom->create_text(
@@ -479,8 +484,8 @@ CLASS lcl_report IMPLEMENTATION.
     lo_label = lo_grid_bottom->create_label(
                    row     = 2
                    column  = 1
-                   text    = TEXT-t03
-                   tooltip = TEXT-t03 ). " Kullanıcı
+                   text    = text-t03
+                   tooltip = text-t03 ). " Kullanıcı
 
     lo_text = lo_grid_bottom->create_text(
                    row     = 2
@@ -530,8 +535,8 @@ CLASS lcl_report IMPLEMENTATION.
     SET HANDLER gr_report->on_user_command FOR gr_events.
 
 * Set Column Texts.
-    me->set_column_text( i_fname = 'ICON'    i_text = TEXT-002 ).
-    me->set_column_text( i_fname = 'MESSA'   i_text = TEXT-003 ).
+    me->set_column_text( i_fname = 'ICON'    i_text = text-002 ).
+    me->set_column_text( i_fname = 'MESSA'   i_text = text-003 ).
     me->set_column_styles( ).
 
 ** Hide columns.
@@ -607,229 +612,229 @@ CLASS lcl_report IMPLEMENTATION.
 
 
 
+    CASE 'X'.
+      WHEN rb_sabit.
+        SELECT * FROM pa0000 INTO TABLE lt_p0000
+                             FOR ALL ENTRIES IN gt_sabit
+                             WHERE pernr EQ gt_sabit-pernr
+                               AND massn EQ '10'.
+      WHEN rb_yuzde.
+        SELECT * FROM pa0000 INTO TABLE lt_p0000
+                             FOR ALL ENTRIES IN gt_yuzde
+                             WHERE pernr EQ gt_yuzde-pernr
+                               AND massn EQ '10'.
+      WHEN rb_kesnt.
+        SELECT * FROM pa0000 INTO TABLE lt_p0000
+                             FOR ALL ENTRIES IN gt_kesnt
+                             WHERE pernr EQ gt_kesnt-pernr
+                               AND massn EQ '10'.
+        SELECT * FROM pa9950 INTO CORRESPONDING FIELDS OF TABLE lt_p9950
+                             FOR ALL ENTRIES IN gt_kesnt
+                                WHERE pernr EQ gt_kesnt-pernr
+                                  AND icrid EQ gt_kesnt-icrid .
+    ENDCASE.
+
+    LOOP AT lt_rows INTO s_rows .
+      CLEAR : ls_p9950, ls_p9951.
       CASE 'X'.
         WHEN rb_sabit.
-          SELECT * FROM pa0000 INTO TABLE lt_p0000
-                               FOR ALL ENTRIES IN gt_sabit
-                               WHERE pernr EQ gt_sabit-pernr
-                                 AND massn EQ '10'.
+          READ TABLE gt_sabit INTO gs_sabit INDEX s_rows.
+          MOVE-CORRESPONDING: gs_sabit TO ls_p9950.
+          lv_pernr = ls_p9950-pernr.
+          lv_begda = ls_p9950-begda.
+          lv_endda = ls_p9950-endda.
         WHEN rb_yuzde.
-          SELECT * FROM pa0000 INTO TABLE lt_p0000
-                               FOR ALL ENTRIES IN gt_yuzde
-                               WHERE pernr EQ gt_yuzde-pernr
-                                 AND massn EQ '10'.
+          READ TABLE gt_yuzde INTO gs_yuzde INDEX s_rows.
+          MOVE-CORRESPONDING: gs_yuzde TO ls_p9950.
+          lv_pernr = ls_p9950-pernr.
+          lv_begda = ls_p9950-begda.
+          lv_endda = ls_p9950-endda.
         WHEN rb_kesnt.
-          SELECT * FROM pa0000 INTO TABLE lt_p0000
-                               FOR ALL ENTRIES IN gt_kesnt
-                               WHERE pernr EQ gt_kesnt-pernr
-                                 AND massn EQ '10'.
-          SELECT * FROM pa9950 INTO CORRESPONDING FIELDS OF TABLE lt_p9950
-                               FOR ALL ENTRIES IN gt_kesnt
-                                  WHERE pernr EQ gt_kesnt-pernr
-                                    AND icrid EQ gt_kesnt-icrid .
+          READ TABLE gt_kesnt INTO gs_kesnt INDEX s_rows.
+          MOVE-CORRESPONDING: gs_kesnt TO ls_p9951.
+          lv_pernr = ls_p9951-pernr.
+          lv_begda = ls_p9951-begda.
+          lv_endda = ls_p9951-endda.
+
+          READ TABLE lt_p9950 INTO ls_pa9950
+            WITH KEY pernr = gs_kesnt-pernr
+                     icrid = gs_kesnt-icrid.
+          IF sy-subrc NE 0 .
+            MOVE 'İlgili borç numarası bulunamadı!'
+             TO gs_kesnt-messa.
+            gs_kesnt-icon = '@8O@'.
+            MODIFY gt_kesnt FROM gs_kesnt INDEX s_rows.
+            CONTINUE.
+          ENDIF.
       ENDCASE.
 
-      LOOP AT lt_rows INTO s_rows .
-        CLEAR : ls_p9950, ls_p9951.
+      LOOP AT lt_p0000 INTO ls_p0000
+        WHERE pernr = lv_pernr
+        AND   begda LE lv_endda
+        AND   endda GE lv_begda.
+      ENDLOOP.
+      IF sy-subrc EQ 0.
+        DATA : lv_msg(100) TYPE c.
+        CONCATENATE ls_p0000-begda+6(2) '.' ls_p0000-begda+4(2) '.'
+        ls_p0000-begda+0(4) INTO lv_msg.
+        CONCATENATE lv_msg 'tarihinde işten çıkış kaydı bulunmaktadır.'
+        INTO lv_msg SEPARATED BY space.
+
         CASE 'X'.
           WHEN rb_sabit.
-            READ TABLE gt_sabit INTO gs_sabit INDEX s_rows.
-            MOVE-CORRESPONDING: gs_sabit TO ls_p9950.
-            lv_pernr = ls_p9950-pernr.
-            lv_begda = ls_p9950-begda.
-            lv_endda = ls_p9950-endda.
+            MOVE lv_msg TO gs_sabit-messa.
+            gs_sabit-icon = '@8O@'.
+            MODIFY gt_sabit FROM gs_sabit INDEX s_rows.
+            CONTINUE.
           WHEN rb_yuzde.
-            READ TABLE gt_yuzde INTO gs_yuzde INDEX s_rows.
-            MOVE-CORRESPONDING: gs_yuzde TO ls_p9950.
-            lv_pernr = ls_p9950-pernr.
-            lv_begda = ls_p9950-begda.
-            lv_endda = ls_p9950-endda.
+            MOVE lv_msg TO gs_yuzde-messa.
+            gs_yuzde-icon = '@8O@'.
+            MODIFY gt_yuzde FROM gs_yuzde INDEX s_rows.
+            CONTINUE.
           WHEN rb_kesnt.
-            READ TABLE gt_kesnt INTO gs_kesnt INDEX s_rows.
-            MOVE-CORRESPONDING: gs_kesnt TO ls_p9951.
-            lv_pernr = ls_p9951-pernr.
-            lv_begda = ls_p9951-begda.
-            lv_endda = ls_p9951-endda.
-
-            READ TABLE lt_p9950 INTO ls_pa9950
-              WITH KEY pernr = gs_kesnt-pernr
-                       icrid = gs_kesnt-icrid.
-            IF sy-subrc NE 0 .
-              MOVE 'İlgili borç numarası bulunamadı!'
-               TO gs_kesnt-messa.
-              gs_kesnt-icon = '@8O@'.
-              MODIFY gt_kesnt FROM gs_kesnt INDEX s_rows.
-              CONTINUE.
-            ENDIF.
+            MOVE lv_msg TO gs_kesnt-messa.
+            gs_kesnt-icon = '@8O@'.
+            MODIFY gt_kesnt FROM gs_kesnt INDEX s_rows.
+            CONTINUE.
         ENDCASE.
 
-        LOOP AT lt_p0000 INTO ls_p0000
-          WHERE pernr = lv_pernr
-          AND   begda LE lv_endda
-          AND   endda GE lv_begda.
-        ENDLOOP.
-        IF sy-subrc EQ 0.
-          DATA : lv_msg(100) TYPE c.
-          CONCATENATE ls_p0000-begda+6(2) '.' ls_p0000-begda+4(2) '.'
-          ls_p0000-begda+0(4) INTO lv_msg.
-          CONCATENATE lv_msg 'tarihinde işten çıkış kaydı bulunmaktadır.'
-          INTO lv_msg SEPARATED BY space.
-
-          CASE 'X'.
-            WHEN rb_sabit.
-              MOVE lv_msg TO gs_sabit-messa.
-              gs_sabit-icon = '@8O@'.
-              MODIFY gt_sabit FROM gs_sabit INDEX s_rows.
-              CONTINUE.
-            WHEN rb_yuzde.
-              MOVE lv_msg TO gs_yuzde-messa.
-              gs_yuzde-icon = '@8O@'.
-              MODIFY gt_yuzde FROM gs_yuzde INDEX s_rows.
-              CONTINUE.
-            WHEN rb_kesnt.
-              MOVE lv_msg TO gs_kesnt-messa.
-              gs_kesnt-icon = '@8O@'.
-              MODIFY gt_kesnt FROM gs_kesnt INDEX s_rows.
-              CONTINUE.
-          ENDCASE.
-
-        ENDIF.
+      ENDIF.
 
 *    ---- Personel Lock
-        CALL FUNCTION 'BAPI_EMPLOYEE_ENQUEUE'
-          EXPORTING
-            number = lv_pernr
-          IMPORTING
-            return = ls_mess.
+      CALL FUNCTION 'BAPI_EMPLOYEE_ENQUEUE'
+        EXPORTING
+          number = lv_pernr
+        IMPORTING
+          return = ls_mess.
 
-        IF ls_mess-type EQ 'E'.
-          CASE 'X'.
-            WHEN rb_sabit.
-              MOVE ls_mess-message TO gs_sabit-messa.
-              gs_sabit-icon = '@8O@'.
-              MODIFY gt_sabit FROM gs_sabit INDEX s_rows.
-              EXIT..
-            WHEN rb_yuzde.
-              MOVE ls_mess-message TO gs_yuzde-messa.
-              gs_yuzde-icon = '@8O@'.
-              MODIFY gt_yuzde FROM gs_yuzde INDEX s_rows.
-              EXIT..
-            WHEN rb_kesnt.
-              MOVE ls_mess-message TO gs_kesnt-messa.
-              gs_kesnt-icon = '@8O@'.
-              MODIFY gt_kesnt FROM gs_kesnt INDEX s_rows.
-              EXIT..
-          ENDCASE.
-        ENDIF.
-
+      IF ls_mess-type EQ 'E'.
         CASE 'X'.
           WHEN rb_sabit.
-            CALL FUNCTION 'HR_INFOTYPE_OPERATION'
-              EXPORTING
-                infty         = '9950'
-                number        = ls_p9950-pernr
-                subtype       = ls_p9950-subty
-                validityend   = ls_p9950-endda
-                validitybegin = ls_p9950-begda
-                record        = ls_p9950
-                operation     = 'DEL'
-              IMPORTING
-                return        = ls_mess.
+            MOVE ls_mess-message TO gs_sabit-messa.
+            gs_sabit-icon = '@8O@'.
+            MODIFY gt_sabit FROM gs_sabit INDEX s_rows.
+            EXIT..
           WHEN rb_yuzde.
-            CALL FUNCTION 'HR_INFOTYPE_OPERATION'
-              EXPORTING
-                infty         = '9950'
-                number        = ls_p9950-pernr
-                subtype       = ls_p9950-subty
-                validityend   = ls_p9950-endda
-                validitybegin = ls_p9950-begda
-                record        = ls_p9950
-                operation     = 'DEL'
-              IMPORTING
-                return        = ls_mess.
+            MOVE ls_mess-message TO gs_yuzde-messa.
+            gs_yuzde-icon = '@8O@'.
+            MODIFY gt_yuzde FROM gs_yuzde INDEX s_rows.
+            EXIT..
           WHEN rb_kesnt.
-            CALL FUNCTION 'HR_INFOTYPE_OPERATION'
-              EXPORTING
-                infty         = '9951'
-                number        = ls_p9951-pernr
-                subtype       = ls_p9951-subty
-                validityend   = ls_p9951-endda
-                validitybegin = ls_p9951-begda
-                record        = ls_p9951
-                operation     = 'DEL'
-              IMPORTING
-                return        = ls_mess.
+            MOVE ls_mess-message TO gs_kesnt-messa.
+            gs_kesnt-icon = '@8O@'.
+            MODIFY gt_kesnt FROM gs_kesnt INDEX s_rows.
+            EXIT..
         ENDCASE.
+      ENDIF.
 
-        IF ls_mess-type EQ 'E'.
-          CASE 'X'.
-            WHEN rb_sabit.
-              MOVE ls_mess-message TO gs_sabit-messa.
-              gs_sabit-icon = '@8O@'.
-              MODIFY gt_sabit FROM gs_sabit INDEX s_rows.
-              EXIT..
-            WHEN rb_yuzde.
-              MOVE ls_mess-message TO gs_yuzde-messa.
-              gs_yuzde-icon = '@8O@'.
-              MODIFY gt_yuzde FROM gs_yuzde INDEX s_rows.
-              EXIT..
-            WHEN rb_kesnt.
-              MOVE ls_mess-message TO gs_kesnt-messa.
-              gs_kesnt-icon = '@8O@'.
-              MODIFY gt_kesnt FROM gs_kesnt INDEX s_rows.
-              EXIT..
-          ENDCASE.
-        ENDIF.
+      CASE 'X'.
+        WHEN rb_sabit.
+          CALL FUNCTION 'HR_INFOTYPE_OPERATION'
+            EXPORTING
+              infty         = '9950'
+              number        = ls_p9950-pernr
+              subtype       = ls_p9950-subty
+              validityend   = ls_p9950-endda
+              validitybegin = ls_p9950-begda
+              record        = ls_p9950
+              operation     = 'DEL'
+            IMPORTING
+              return        = ls_mess.
+        WHEN rb_yuzde.
+          CALL FUNCTION 'HR_INFOTYPE_OPERATION'
+            EXPORTING
+              infty         = '9950'
+              number        = ls_p9950-pernr
+              subtype       = ls_p9950-subty
+              validityend   = ls_p9950-endda
+              validitybegin = ls_p9950-begda
+              record        = ls_p9950
+              operation     = 'DEL'
+            IMPORTING
+              return        = ls_mess.
+        WHEN rb_kesnt.
+          CALL FUNCTION 'HR_INFOTYPE_OPERATION'
+            EXPORTING
+              infty         = '9951'
+              number        = ls_p9951-pernr
+              subtype       = ls_p9951-subty
+              validityend   = ls_p9951-endda
+              validitybegin = ls_p9951-begda
+              record        = ls_p9951
+              operation     = 'DEL'
+            IMPORTING
+              return        = ls_mess.
+      ENDCASE.
+
+      IF ls_mess-type EQ 'E'.
+        CASE 'X'.
+          WHEN rb_sabit.
+            MOVE ls_mess-message TO gs_sabit-messa.
+            gs_sabit-icon = '@8O@'.
+            MODIFY gt_sabit FROM gs_sabit INDEX s_rows.
+            EXIT..
+          WHEN rb_yuzde.
+            MOVE ls_mess-message TO gs_yuzde-messa.
+            gs_yuzde-icon = '@8O@'.
+            MODIFY gt_yuzde FROM gs_yuzde INDEX s_rows.
+            EXIT..
+          WHEN rb_kesnt.
+            MOVE ls_mess-message TO gs_kesnt-messa.
+            gs_kesnt-icon = '@8O@'.
+            MODIFY gt_kesnt FROM gs_kesnt INDEX s_rows.
+            EXIT..
+        ENDCASE.
+      ENDIF.
 
 *    ------ Personel Unlock
-        CALL FUNCTION 'BAPI_EMPLOYEE_DEQUEUE'
-          EXPORTING
-            number = lv_pernr
-          IMPORTING
-            return = ls_mess.
+      CALL FUNCTION 'BAPI_EMPLOYEE_DEQUEUE'
+        EXPORTING
+          number = lv_pernr
+        IMPORTING
+          return = ls_mess.
 
-        IF ls_mess-type EQ 'E'.
-          CASE 'X'.
-            WHEN rb_sabit.
-              MOVE ls_mess-message TO gs_sabit-messa.
-              gs_sabit-icon = '@8O@'.
-              MODIFY gt_sabit FROM gs_sabit INDEX s_rows.
-              EXIT..
-            WHEN rb_yuzde.
-              MOVE ls_mess-message TO gs_yuzde-messa.
-              gs_yuzde-icon = '@8O@'.
-              MODIFY gt_yuzde FROM gs_yuzde INDEX s_rows.
-              EXIT..
-            WHEN rb_kesnt.
-              MOVE ls_mess-message TO gs_kesnt-messa.
-              gs_kesnt-icon = '@8O@'.
-              MODIFY gt_kesnt FROM gs_kesnt INDEX s_rows.
-              EXIT..
-          ENDCASE.
-        ENDIF.
+      IF ls_mess-type EQ 'E'.
         CASE 'X'.
           WHEN rb_sabit.
-            IF gs_sabit-icon IS INITIAL.
-              gs_sabit-icon = '@2K@'.
-              gs_sabit-messa = 'Başarılı'.
-              MODIFY gt_sabit FROM gs_sabit INDEX s_rows TRANSPORTING messa icon.
-            ENDIF.
+            MOVE ls_mess-message TO gs_sabit-messa.
+            gs_sabit-icon = '@8O@'.
+            MODIFY gt_sabit FROM gs_sabit INDEX s_rows.
+            EXIT..
           WHEN rb_yuzde.
-            IF gs_yuzde-icon IS INITIAL.
-              gs_yuzde-icon = '@2K@'.
-              gs_yuzde-messa = 'Başarılı'.
-              MODIFY gt_yuzde FROM gs_yuzde INDEX s_rows TRANSPORTING messa icon.
-            ENDIF.
+            MOVE ls_mess-message TO gs_yuzde-messa.
+            gs_yuzde-icon = '@8O@'.
+            MODIFY gt_yuzde FROM gs_yuzde INDEX s_rows.
+            EXIT..
           WHEN rb_kesnt.
-            IF gs_kesnt-icon IS INITIAL.
-              gs_kesnt-icon = '@2K@'.
-              gs_kesnt-messa = 'Başarılı'.
-              MODIFY gt_kesnt FROM gs_kesnt INDEX s_rows TRANSPORTING messa icon.
-            ENDIF.
+            MOVE ls_mess-message TO gs_kesnt-messa.
+            gs_kesnt-icon = '@8O@'.
+            MODIFY gt_kesnt FROM gs_kesnt INDEX s_rows.
+            EXIT..
         ENDCASE.
-      ENDLOOP.
-      COMMIT WORK.
-  ENDMETHOD.
+      ENDIF.
+      CASE 'X'.
+        WHEN rb_sabit.
+          IF gs_sabit-icon IS INITIAL.
+            gs_sabit-icon = '@2K@'.
+            gs_sabit-messa = 'Başarılı'.
+            MODIFY gt_sabit FROM gs_sabit INDEX s_rows TRANSPORTING messa icon.
+          ENDIF.
+        WHEN rb_yuzde.
+          IF gs_yuzde-icon IS INITIAL.
+            gs_yuzde-icon = '@2K@'.
+            gs_yuzde-messa = 'Başarılı'.
+            MODIFY gt_yuzde FROM gs_yuzde INDEX s_rows TRANSPORTING messa icon.
+          ENDIF.
+        WHEN rb_kesnt.
+          IF gs_kesnt-icon IS INITIAL.
+            gs_kesnt-icon = '@2K@'.
+            gs_kesnt-messa = 'Başarılı'.
+            MODIFY gt_kesnt FROM gs_kesnt INDEX s_rows TRANSPORTING messa icon.
+          ENDIF.
+      ENDCASE.
+    ENDLOOP.
+    COMMIT WORK.
+  ENDMETHOD.                    "delete_rows
   METHOD get_data_del.
     DATA : lt_9950 TYPE TABLE OF pa9950,
            ls_9950 TYPE pa9950,
@@ -876,7 +881,7 @@ CLASS lcl_report IMPLEMENTATION.
           MOVE-CORRESPONDING ls_9950 TO gs_kesnt.
           COLLECT gs_kesnt INTO gt_kesnt.
         ENDLOOP.
-      ENDCASE.
+    ENDCASE.
 
 
 
@@ -905,7 +910,7 @@ CLASS lcl_report IMPLEMENTATION.
 *    ENDLOOP.
 *
 
-  ENDMETHOD.
+  ENDMETHOD.                    "get_data_del
   METHOD screen_output.
     " Girilen dosya yolunun çekilmesi
     me->filename_get( ).
@@ -919,7 +924,7 @@ CLASS lcl_report IMPLEMENTATION.
 
 
 
-  ENDMETHOD.
+  ENDMETHOD.                    "set_data
   METHOD start_of_selection.
     FIELD-SYMBOLS : <table> TYPE table.
     CASE 'X'.
@@ -947,7 +952,7 @@ CLASS lcl_report IMPLEMENTATION.
       WHEN rb_kesnt.
         MOVE : <table>[] TO gt_kesnt[].
     ENDCASE.
-  ENDMETHOD.
+  ENDMETHOD.                    "start_of_selection
 
   METHOD get_excel.
 
@@ -1018,12 +1023,12 @@ CLASS lcl_report IMPLEMENTATION.
       SORT lt_intern BY row col.
       DELETE lt_intern WHERE row EQ 1.
     ENDIF.
-
-    LOOP AT lt_intern ASSIGNING FIELD-SYMBOL(<f1>).
+    FIELD-SYMBOLS <f1> TYPE kcde_cells .
+    LOOP AT lt_intern ASSIGNING <f1>.
       MOVE : <f1>-col TO ld_index.
       UNASSIGN <fs> .
 *      DO 1000 TIMES.
-        ASSIGN COMPONENT ld_index OF STRUCTURE <wa> TO <fs> .
+      ASSIGN COMPONENT ld_index OF STRUCTURE <wa> TO <fs> .
 *        ASSIGN COMPONENT <f1>-col OF STRUCTURE <wa> TO <fs> .
 *        IF <fs> IS ASSIGNED .
 *          EXIT.
@@ -1076,17 +1081,9 @@ CLASS lcl_report IMPLEMENTATION.
           MOVE lv_decimal TO <fs>.
 
         WHEN OTHERS.
-          CALL FUNCTION 'ZHRIGA_FG036_003'
-            EXPORTING
-              i_value     = <f1>-value
-              i_variable  = ','
-              i_separator = '.'
-            IMPORTING
-              e_value     = <f1>-value
-            EXCEPTIONS
-              not_in      = 1
-              OTHERS      = 2.
 
+          PERFORM value_change USING <f1>-value ',' '.'
+                            CHANGING <f1>-value.
           MOVE <f1>-value TO <fs>.
 
       ENDCASE.
@@ -1097,5 +1094,24 @@ CLASS lcl_report IMPLEMENTATION.
       ENDAT.
     ENDLOOP.
 
-  ENDMETHOD.
-ENDCLASS.
+  ENDMETHOD.                    "get_excel
+ENDCLASS.                    "lcl_report IMPLEMENTATION
+*&---------------------------------------------------------------------*
+*&      Form  VALUE_CHANGE
+*&---------------------------------------------------------------------*
+FORM value_change  USING    i_value
+                            i_variable
+                            i_separator
+                   CHANGING e_value.
+
+  REPLACE i_variable IN i_value WITH i_separator.
+
+  IF sy-subrc EQ 0.
+    e_value = i_value.
+  ELSE.
+    IF i_value GT '0'.
+      e_value = i_value.
+    ENDIF.
+  ENDIF.
+
+ENDFORM.                    " VALUE_CHANGE

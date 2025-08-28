@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <PROGDIR>
-    <NAME>ZHR_BRNT</NAME>
+    <NAME>ZHR_PAYROLL</NAME>
     <SUBC>I</SUBC>
     <APPL>P</APPL>
     <RSTAT>P</RSTAT>
@@ -13,8 +13,8 @@
    <TPOOL>
     <item>
      <ID>R</ID>
-     <ENTRY>Brütten nete</ENTRY>
-     <LENGTH>16</LENGTH>
+     <ENTRY>Include ZHR_PAYROLL</ENTRY>
+     <LENGTH>19</LENGTH>
     </item>
    </TPOOL>
   </asx:values>
