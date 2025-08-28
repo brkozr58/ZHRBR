@@ -1097,7 +1097,7 @@ FORM value_change  USING    i_value
                             i_variable
                             i_separator
                    CHANGING e_value.
-
+*  düzenleme
   REPLACE i_variable IN i_value WITH i_separator.
 
   IF sy-subrc EQ 0.
