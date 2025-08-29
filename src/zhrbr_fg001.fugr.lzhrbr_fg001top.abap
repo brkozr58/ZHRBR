@@ -1,4 +1,4 @@
-FUNCTION-POOL zhrbr_fg001.                  "MESSAGE-ID ..
+FUNCTION-POOL ZHRBR_FG001.                  "MESSAGE-ID ..
 
 * INCLUDE LZHRIC_FG001D...                   " Local class definition
 TYPE-POOLS: soi.

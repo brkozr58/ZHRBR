@@ -282,8 +282,9 @@ CLASS lcl_report IMPLEMENTATION.
     ENDIF .
 
 
+    DATA : t026 TYPE TABLE OF zhrbr_t008.
 
-    SELECT * FROM zhrbr_t008 INTO TABLE @DATA(t026) WHERE pernr EQ @pernr-pernr.
+    SELECT * FROM zhrbr_t008 INTO TABLE t026 WHERE pernr EQ pernr-pernr.
 
     LOOP AT p9950 INTO ls_p9950 WHERE subty IN s_subty.
 
@@ -391,8 +392,8 @@ CLASS lcl_report IMPLEMENTATION.
 
 
 *      ls_report-subty = ls_p9950-subty .
-
-      READ TABLE t591s INTO DATA(s_t591s) WITH KEY subty = ls_p9950-subty .
+      DATA : s_t591s TYPE t591s .
+      READ TABLE t591s INTO s_t591s WITH KEY subty = ls_p9950-subty .
 
       ls_report-subtx = s_t591s-stext .
 
@@ -424,7 +425,8 @@ CLASS lcl_report IMPLEMENTATION.
         ls_report-aborc = lv_m * ls_p9950-tkstt .
 
       ENDIF .
-      READ TABLE t026 INTO DATA(s026) WITH KEY pernr = pernr-pernr
+      DATA : s026 LIKE LINE OF t026.
+      READ TABLE t026 INTO s026 WITH KEY pernr = pernr-pernr
                                                icrid = ls_p9950-icrid.
       IF sy-subrc EQ 0.
         ls_report-aborc = ls_report-aborc + s026-odmtr.
