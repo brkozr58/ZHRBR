@@ -5,6 +5,56 @@
    <MASTER_LANGUAGE>T</MASTER_LANGUAGE>
    <STARTING_FOLDER>/src/</STARTING_FOLDER>
    <FOLDER_LOGIC>PREFIX</FOLDER_LOGIC>
+   <IGNORE>
+    <item>/src/zhr_brnt.prog.abap</item>
+    <item>/src/zhr_brnt.prog.xml</item>
+    <item>/src/zhr_payroll.prog.abap</item>
+    <item>/src/zhr_payroll.prog.xml</item>
+    <item>/src/zhrbr_v002.fugr.lzhrbr_v002f00.abap</item>
+    <item>/src/zhrbr_v002.fugr.lzhrbr_v002f00.xml</item>
+    <item>/src/zhrbr_v002.fugr.lzhrbr_v002i00.abap</item>
+    <item>/src/zhrbr_v002.fugr.lzhrbr_v002i00.xml</item>
+    <item>/src/zhrbr_v002.fugr.lzhrbr_v002o01.abap</item>
+    <item>/src/zhrbr_v002.fugr.lzhrbr_v002o01.xml</item>
+    <item>/src/zhrbr_v002.fugr.lzhrbr_v002top.abap</item>
+    <item>/src/zhrbr_v002.fugr.lzhrbr_v002top.xml</item>
+    <item>/src/zhrbr_v003.fugr.lzhrbr_v003f00.abap</item>
+    <item>/src/zhrbr_v003.fugr.lzhrbr_v003f00.xml</item>
+    <item>/src/zhrbr_v003.fugr.lzhrbr_v003i00.abap</item>
+    <item>/src/zhrbr_v003.fugr.lzhrbr_v003i00.xml</item>
+    <item>/src/zhrbr_v003.fugr.lzhrbr_v003top.abap</item>
+    <item>/src/zhrbr_v003.fugr.lzhrbr_v003top.xml</item>
+    <item>/src/zhrbr_v004.fugr.lzhrbr_v004f00.abap</item>
+    <item>/src/zhrbr_v004.fugr.lzhrbr_v004f00.xml</item>
+    <item>/src/zhrbr_v004.fugr.lzhrbr_v004i00.abap</item>
+    <item>/src/zhrbr_v004.fugr.lzhrbr_v004i00.xml</item>
+    <item>/src/zhrbr_v004.fugr.lzhrbr_v004o01.abap</item>
+    <item>/src/zhrbr_v004.fugr.lzhrbr_v004o01.xml</item>
+    <item>/src/zhrbr_v004.fugr.lzhrbr_v004top.abap</item>
+    <item>/src/zhrbr_v004.fugr.lzhrbr_v004top.xml</item>
+    <item>/src/zhrbr_v005.fugr.lzhrbr_v005f00.abap</item>
+    <item>/src/zhrbr_v005.fugr.lzhrbr_v005f00.xml</item>
+    <item>/src/zhrbr_v005.fugr.lzhrbr_v005i00.abap</item>
+    <item>/src/zhrbr_v005.fugr.lzhrbr_v005i00.xml</item>
+    <item>/src/zhrbr_v005.fugr.lzhrbr_v005o01.abap</item>
+    <item>/src/zhrbr_v005.fugr.lzhrbr_v005o01.xml</item>
+    <item>/src/zhrbr_v005.fugr.lzhrbr_v005top.abap</item>
+    <item>/src/zhrbr_v005.fugr.lzhrbr_v005top.xml</item>
+    <item>/src/zhrbr_v006.fugr.lzhrbr_v006f00.abap</item>
+    <item>/src/zhrbr_v006.fugr.lzhrbr_v006f00.xml</item>
+    <item>/src/zhrbr_v006.fugr.lzhrbr_v006i00.abap</item>
+    <item>/src/zhrbr_v006.fugr.lzhrbr_v006i00.xml</item>
+    <item>/src/zhrbr_v006.fugr.lzhrbr_v006top.abap</item>
+    <item>/src/zhrbr_v006.fugr.lzhrbr_v006top.xml</item>
+    <item>/src/zhrbr_v007.fugr.lzhrbr_v007f00.abap</item>
+    <item>/src/zhrbr_v007.fugr.lzhrbr_v007f00.xml</item>
+    <item>/src/zhrbr_v007.fugr.lzhrbr_v007i00.abap</item>
+    <item>/src/zhrbr_v007.fugr.lzhrbr_v007i00.xml</item>
+    <item>/src/zhrbr_v007.fugr.lzhrbr_v007o01.abap</item>
+    <item>/src/zhrbr_v007.fugr.lzhrbr_v007o01.xml</item>
+    <item>/src/zhrbr_v007.fugr.lzhrbr_v007top.abap</item>
+    <item>/src/zhrbr_v007.fugr.lzhrbr_v007top.xml</item>
+   </IGNORE>
   </DATA>
  </asx:values>
 </asx:abap>
