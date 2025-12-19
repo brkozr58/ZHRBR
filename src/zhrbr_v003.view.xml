@@ -41,6 +41,12 @@
      <FIELDNAME>ORNTX</FIELDNAME>
     </DD27P>
    </DD27P_TABLE>
+   <TABL_EXTRAS>
+    <TDDAT>
+     <TABNAME>ZHRBR_V003</TABNAME>
+     <CCLASS>&amp;NC&amp;</CCLASS>
+    </TDDAT>
+   </TABL_EXTRAS>
   </asx:values>
  </asx:abap>
 </abapGit>

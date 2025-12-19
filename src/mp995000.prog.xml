@@ -57,65 +57,6 @@
        <INPUT_FLD>X</INPUT_FLD>
       </RPY_DYFATC>
      </FIELDS>
-     <FLOW_LOGIC>
-      <RPY_DYFLOW>
-       <LINE>*  ********************************************************************</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*                         Initialisation screen</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*  ********************************************************************</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*   do not change this screen!</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*   this screen is used by the dialog module (RP_nnnn)</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*   and serves internal, technical reasons</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>PROCESS BEFORE OUTPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*                       processing before output</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE INIT_DIALOG.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>PROCESS AFTER INPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*                        processing after input</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE OPERATION.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW/>
-     </FLOW_LOGIC>
     </item>
     <item>
      <HEADER>
@@ -178,7 +119,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-BEGDA</NAME>
-       <TEXT>Gçrl._</TEXT>
        <LINE>005</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>006</LENGTH>
@@ -195,7 +135,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-BEGDA</NAME>
-       <TEXT>__________</TEXT>
        <LINE>005</LINE>
        <COLUMN>013</COLUMN>
        <LENGTH>010</LENGTH>
@@ -213,7 +152,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>RP50M-ENDDA</NAME>
-       <TEXT>son</TEXT>
        <LINE>005</LINE>
        <COLUMN>026</COLUMN>
        <LENGTH>003</LENGTH>
@@ -230,7 +168,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ENDDA</NAME>
-       <TEXT>__________</TEXT>
        <LINE>005</LINE>
        <COLUMN>032</COLUMN>
        <LENGTH>010</LENGTH>
@@ -248,7 +185,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-AEDTM</NAME>
-       <TEXT>Dğşk.</TEXT>
        <LINE>005</LINE>
        <COLUMN>045</COLUMN>
        <LENGTH>005</LENGTH>
@@ -265,7 +201,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-AEDTM</NAME>
-       <TEXT>__________</TEXT>
        <LINE>005</LINE>
        <COLUMN>051</COLUMN>
        <LENGTH>010</LENGTH>
@@ -282,7 +217,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-UNAME</NAME>
-       <TEXT>____________</TEXT>
        <LINE>005</LINE>
        <COLUMN>062</COLUMN>
        <LENGTH>012</LENGTH>
@@ -299,7 +233,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>RP50M-SPRTX</NAME>
-       <TEXT>________________________________________</TEXT>
        <ROLLING>X</ROLLING>
        <LINE>005</LINE>
        <COLUMN>075</COLUMN>
@@ -398,173 +331,6 @@
        <REF_FIELD>TABS_SCA</REF_FIELD>
       </RPY_DYFATC>
      </FIELDS>
-     <FLOW_LOGIC>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>PROCESS BEFORE OUTPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE before_output.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CALL SUBSCREEN subscreen_empl   INCLUDING empl_prog empl_dynnr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CALL SUBSCREEN subscreen_header INCLUDING header_prog header_dynnr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         infotype specific operations</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE p9950.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>*&amp;SPWIZARD: PBO FLOW LOGIC FOR TABSTRIP &apos;TABS&apos;</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE tabs_active_tab_set.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CALL SUBSCREEN tabs_sca</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    INCLUDING g_tabs-prog g_tabs-subscreen.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         general infotype-independent operations</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>  MODULE hidden_data.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>PROCESS AFTER INPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*  process exit commands</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE exit AT EXIT-COMMAND.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         processing after input</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         check and mark if there was any input: all fields that</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         accept input HAVE TO BE listed here</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-begda.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-endda.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    MODULE input_status ON CHAIN-REQUEST.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*      process functioncodes before input-checks                      *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE pre_input_checks.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         input-checks:                                               *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>*   insert check modules here:</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>*  ...</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*&amp;SPWIZARD: PAI FLOW LOGIC FOR TABSTRIP &apos;TABS&apos;</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CALL SUBSCREEN tabs_sca.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE tabs_active_tab_get.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*     process function code: ALL fields that appear on the</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*      screen HAVE TO BE listed here (including output-only fields)</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-begda.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-endda.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD rp50m-sprtx.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    MODULE post_input_checks.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-     </FLOW_LOGIC>
     </item>
     <item>
      <HEADER>
@@ -606,7 +372,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-SUBTY</NAME>
-       <TEXT>____</TEXT>
        <LINE>001</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>004</LENGTH>
@@ -689,7 +454,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ICRID</NAME>
-       <TEXT>__________</TEXT>
        <LINE>003</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>010</LENGTH>
@@ -722,7 +486,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-COMPL</NAME>
-       <TEXT>_</TEXT>
        <LINE>003</LINE>
        <COLUMN>076</COLUMN>
        <LENGTH>001</LENGTH>
@@ -758,7 +521,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-DOSSR</NAME>
-       <TEXT>__</TEXT>
        <LINE>004</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>002</LENGTH>
@@ -791,7 +553,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-DOSNO</NAME>
-       <TEXT>____________________</TEXT>
        <LINE>004</LINE>
        <COLUMN>028</COLUMN>
        <LENGTH>020</LENGTH>
@@ -827,7 +588,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-KESSR</NAME>
-       <TEXT>___</TEXT>
        <LINE>004</LINE>
        <COLUMN>076</COLUMN>
        <LENGTH>003</LENGTH>
@@ -845,7 +605,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ICRAD</NAME>
-       <TEXT>İcra_Dairesi________</TEXT>
        <LINE>005</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -862,7 +621,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ICRAD</NAME>
-       <TEXT>____</TEXT>
        <LINE>005</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>004</LENGTH>
@@ -896,7 +654,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ALICI</NAME>
-       <TEXT>Alıcı_______________</TEXT>
        <LINE>006</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -913,7 +670,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ALICI</NAME>
-       <TEXT>________________________________________</TEXT>
        <LINE>006</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>040</LENGTH>
@@ -931,7 +687,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-AIBAN</NAME>
-       <TEXT>Alıcı_IBAN__________</TEXT>
        <LINE>007</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -948,7 +703,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-AIBAN</NAME>
-       <TEXT>__________________________________</TEXT>
        <LINE>007</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>034</LENGTH>
@@ -980,7 +734,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-HSPSK</NAME>
-       <TEXT>Hesaplama_Şekli_____</TEXT>
        <LINE>010</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -997,7 +750,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-HSPSK</NAME>
-       <TEXT>__</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>010</LINE>
        <COLUMN>023</COLUMN>
@@ -1020,7 +772,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ICRTR</NAME>
-       <TEXT>Borç_Tutarı_________</TEXT>
        <LINE>011</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1039,7 +790,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ICRTR</NAME>
-       <TEXT>__________</TEXT>
        <LINE>011</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>010</LENGTH>
@@ -1079,7 +829,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-WAERS</NAME>
-       <TEXT>_____</TEXT>
        <LINE>011</LINE>
        <COLUMN>038</COLUMN>
        <LENGTH>005</LENGTH>
@@ -1101,7 +850,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-FAIZT</NAME>
-       <TEXT>Faiz_Tutarı_________</TEXT>
        <LINE>011</LINE>
        <COLUMN>049</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1120,7 +868,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-FAIZT</NAME>
-       <TEXT>__________</TEXT>
        <LINE>011</LINE>
        <COLUMN>070</COLUMN>
        <LENGTH>010</LENGTH>
@@ -1201,7 +948,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-TKSTT</NAME>
-       <TEXT>Taksit_Tutarı_______</TEXT>
        <LINE>013</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1220,7 +966,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-TKSTT</NAME>
-       <TEXT>__________</TEXT>
        <LINE>013</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>010</LENGTH>
@@ -1241,7 +986,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-TKSTS</NAME>
-       <TEXT>Taksit_Sayısı_______</TEXT>
        <LINE>014</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1260,7 +1004,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-TKSTS</NAME>
-       <TEXT>___</TEXT>
        <LINE>014</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>003</LENGTH>
@@ -1280,7 +1023,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNG1</NAME>
-       <TEXT>Kesinti_Oranı_______</TEXT>
        <LINE>015</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1299,7 +1041,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNG1</NAME>
-       <TEXT>__</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>015</LINE>
        <COLUMN>023</COLUMN>
@@ -1320,7 +1061,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNY1</NAME>
-       <TEXT>Yüzde_______________</TEXT>
        <LINE>015</LINE>
        <COLUMN>049</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1339,7 +1079,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY1</NAME>
-       <TEXT>___</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>015</LINE>
        <COLUMN>070</COLUMN>
@@ -1362,7 +1101,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNG2</NAME>
-       <TEXT>Kesinti_Oranı_______</TEXT>
        <LINE>016</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1403,7 +1141,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNY2</NAME>
-       <TEXT>Yüzde_______________</TEXT>
        <LINE>016</LINE>
        <COLUMN>049</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1422,7 +1159,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY2</NAME>
-       <TEXT>___</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>016</LINE>
        <COLUMN>070</COLUMN>
@@ -1445,7 +1181,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNG3</NAME>
-       <TEXT>Kesinti_Oranı_______</TEXT>
        <LINE>017</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1486,7 +1221,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNY3</NAME>
-       <TEXT>Yüzde_______________</TEXT>
        <LINE>017</LINE>
        <COLUMN>049</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1505,7 +1239,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY3</NAME>
-       <TEXT>___</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>017</LINE>
        <COLUMN>070</COLUMN>
@@ -1528,7 +1261,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNG4</NAME>
-       <TEXT>Kesinti_Oranı_______</TEXT>
        <LINE>018</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1569,7 +1301,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNY4</NAME>
-       <TEXT>Yüzde_______________</TEXT>
        <LINE>018</LINE>
        <COLUMN>049</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1588,7 +1319,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY4</NAME>
-       <TEXT>___</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>018</LINE>
        <COLUMN>070</COLUMN>
@@ -1611,7 +1341,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNG5</NAME>
-       <TEXT>Kesinti_Oranı_______</TEXT>
        <LINE>019</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1652,7 +1381,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNY5</NAME>
-       <TEXT>Yüzde_______________</TEXT>
        <LINE>019</LINE>
        <COLUMN>049</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1671,7 +1399,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY5</NAME>
-       <TEXT>___</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>019</LINE>
        <COLUMN>070</COLUMN>
@@ -2028,7 +1755,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ACILM</NAME>
-       <TEXT>Borç_Açıklaması_____</TEXT>
        <LINE>024</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -2075,369 +1801,6 @@
        <INPUT_FLD>X</INPUT_FLD>
       </RPY_DYFATC>
      </FIELDS>
-     <FLOW_LOGIC>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>PROCESS BEFORE OUTPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE modify_subscreen.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*  CALL SUBSCREEN subscreen_empl   INCLUDING empl_prog empl_dynnr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*  CALL SUBSCREEN subscreen_header INCLUDING header_prog header_dynnr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         infotype specific operations</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE p9950_2100.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE p9950_hide.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE hidden_data_subscreen.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>PROCESS AFTER INPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*  process exit commands</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE exit AT EXIT-COMMAND.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         processing after input</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         check and mark if there was any input: all fields that</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         accept input HAVE TO BE listed here</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-compl.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-aiban.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-alici.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-icrad.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-dosno.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-dossr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-acilm.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-faizt.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny9.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng9.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny8.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng8.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny7.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng7.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny6.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng6.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny5.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng5.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny4.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng4.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny3.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng3.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny2.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng2.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny1.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng1.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-tkstt.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-tksts.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-waers.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-icrtr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-hspsk.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-kessr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-icrid.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    MODULE input_status_subscreen ON CHAIN-REQUEST.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*      process functioncodes before input-checks                      *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE pre_input_checks.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         input-checks:                                               *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>*   insert check modules here:</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>  MODULE user_command_2100.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*  ...</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*     process function code: ALL fields that appear on the</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*      screen HAVE TO BE listed here (including output-only fields)</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-compl.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-aiban.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-alici.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-icrad.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-dosno.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-dossr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-acilm.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-faizt.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny9.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng9.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny8.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng8.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny7.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng7.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny6.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng6.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny5.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng5.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny4.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng4.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny3.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng3.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny2.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng2.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny1.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng1.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-tkstt.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-tksts.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-waers.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-icrtr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-hspsk.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-kessr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-icrid.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*    MODULE check_outpayment.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>PROCESS ON VALUE-REQUEST.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD p9950-orng1 MODULE orng1_values.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD p9950-orng2 MODULE orng2_values.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD p9950-orng3 MODULE orng3_values.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD p9950-orng4 MODULE orng4_values.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD p9950-orng5 MODULE orng5_values.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD p9950-orng6 MODULE orng6_values.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD p9950-orng7 MODULE orng7_values.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD p9950-orng8 MODULE orng8_values.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD p9950-orng9 MODULE orng9_values.</LINE>
-      </RPY_DYFLOW>
-     </FLOW_LOGIC>
     </item>
     <item>
      <HEADER>
@@ -2808,93 +2171,6 @@
        <REQU_ENTRY>N</REQU_ENTRY>
       </RPY_DYFATC>
      </FIELDS>
-     <FLOW_LOGIC>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>PROCESS BEFORE OUTPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>  MODULE status_2200.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>*&amp;SPWIZARD: PBO FLOW LOGIC FOR TABLECONTROL &apos;TCONT&apos;</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE tcont_change_tc_attr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*&amp;SPWIZARD: MODULE TCONT_CHANGE_COL_ATTR.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  LOOP AT   t9951</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>       INTO t9951</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>       WITH CONTROL tcont</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>       CURSOR tcont-current_line.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*&amp;SPWIZARD:   MODULE TCONT_CHANGE_FIELD_ATTR</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDLOOP.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>PROCESS AFTER INPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*&amp;SPWIZARD: PAI FLOW LOGIC FOR TABLECONTROL &apos;TCONT&apos;</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  LOOP AT t9951.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD t9951-begda.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD t9951-odmtr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD t9951-acikl.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD t9951-manue.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD t9951-field</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      MODULE tcont_mark ON REQUEST.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDLOOP.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*&amp;SPWIZARD: MODULE TCONT_CHANGE_TC_ATTR.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*&amp;SPWIZARD: MODULE TCONT_CHANGE_COL_ATTR.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>  MODULE user_command_2200.</LINE>
-      </RPY_DYFLOW>
-     </FLOW_LOGIC>
     </item>
     <item>
      <HEADER>
@@ -2969,7 +2245,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ICRID</NAME>
-       <TEXT>__________</TEXT>
        <LINE>003</LINE>
        <COLUMN>024</COLUMN>
        <LENGTH>010</LENGTH>
@@ -3004,7 +2279,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-COMPL</NAME>
-       <TEXT>_</TEXT>
        <LINE>003</LINE>
        <COLUMN>077</COLUMN>
        <LENGTH>001</LENGTH>
@@ -3040,7 +2314,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-DOSSR</NAME>
-       <TEXT>__</TEXT>
        <LINE>004</LINE>
        <COLUMN>024</COLUMN>
        <LENGTH>002</LENGTH>
@@ -3073,7 +2346,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-DOSNO</NAME>
-       <TEXT>____________________</TEXT>
        <LINE>004</LINE>
        <COLUMN>029</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3109,7 +2381,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-KESSR</NAME>
-       <TEXT>___</TEXT>
        <LINE>004</LINE>
        <COLUMN>077</COLUMN>
        <LENGTH>003</LENGTH>
@@ -3141,7 +2412,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ICRAD</NAME>
-       <TEXT>İcra_Dairesi________</TEXT>
        <LINE>007</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3158,7 +2428,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ICRAD</NAME>
-       <TEXT>____</TEXT>
        <LINE>007</LINE>
        <COLUMN>024</COLUMN>
        <LENGTH>004</LENGTH>
@@ -3176,7 +2445,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ALICI</NAME>
-       <TEXT>Alıcı_______________</TEXT>
        <LINE>008</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3193,7 +2461,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ALICI</NAME>
-       <TEXT>________________________________________</TEXT>
        <LINE>008</LINE>
        <COLUMN>024</COLUMN>
        <LENGTH>040</LENGTH>
@@ -3211,7 +2478,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-AIBAN</NAME>
-       <TEXT>Alıcı_IBAN__________</TEXT>
        <LINE>009</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3228,7 +2494,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-AIBAN</NAME>
-       <TEXT>__________________________________</TEXT>
        <LINE>009</LINE>
        <COLUMN>024</COLUMN>
        <LENGTH>034</LENGTH>
@@ -3260,7 +2525,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-HSPSK</NAME>
-       <TEXT>Hesaplama_Şekli_____</TEXT>
        <LINE>012</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3277,7 +2541,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-HSPSK</NAME>
-       <TEXT>__</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>012</LINE>
        <COLUMN>024</COLUMN>
@@ -3298,7 +2561,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ICRTR</NAME>
-       <TEXT>Borç_Tutarı_________</TEXT>
        <LINE>013</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3316,7 +2578,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ICRTR</NAME>
-       <TEXT>__________</TEXT>
        <LINE>013</LINE>
        <COLUMN>024</COLUMN>
        <LENGTH>010</LENGTH>
@@ -3354,7 +2615,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-WAERS</NAME>
-       <TEXT>_____</TEXT>
        <LINE>013</LINE>
        <COLUMN>039</COLUMN>
        <LENGTH>005</LENGTH>
@@ -3375,7 +2635,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-FAIZT</NAME>
-       <TEXT>Faiz_Tutarı_________</TEXT>
        <LINE>013</LINE>
        <COLUMN>050</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3393,7 +2652,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-FAIZT</NAME>
-       <TEXT>__________</TEXT>
        <LINE>013</LINE>
        <COLUMN>071</COLUMN>
        <LENGTH>010</LENGTH>
@@ -3413,7 +2671,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-TKSTT</NAME>
-       <TEXT>Taksit_Tutarı_______</TEXT>
        <LINE>014</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3430,7 +2687,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-TKSTT</NAME>
-       <TEXT>__________</TEXT>
        <LINE>014</LINE>
        <COLUMN>024</COLUMN>
        <LENGTH>010</LENGTH>
@@ -3449,7 +2705,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-TKSTS</NAME>
-       <TEXT>Taksit_Sayısı_______</TEXT>
        <LINE>015</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3466,7 +2721,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-TKSTS</NAME>
-       <TEXT>___</TEXT>
        <LINE>015</LINE>
        <COLUMN>024</COLUMN>
        <LENGTH>003</LENGTH>
@@ -3484,7 +2738,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNG1</NAME>
-       <TEXT>Kesinti_Oranı_______</TEXT>
        <LINE>016</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3502,7 +2755,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNG1</NAME>
-       <TEXT>__</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>016</LINE>
        <COLUMN>024</COLUMN>
@@ -3522,7 +2774,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNY1</NAME>
-       <TEXT>Yüzde_______________</TEXT>
        <LINE>016</LINE>
        <COLUMN>050</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3539,7 +2790,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY1</NAME>
-       <TEXT>___</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>016</LINE>
        <COLUMN>071</COLUMN>
@@ -3560,7 +2810,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNG2</NAME>
-       <TEXT>Kesinti_Oranı_______</TEXT>
        <LINE>017</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3599,7 +2848,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNY2</NAME>
-       <TEXT>Yüzde_______________</TEXT>
        <LINE>017</LINE>
        <COLUMN>050</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3616,7 +2864,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY2</NAME>
-       <TEXT>___</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>017</LINE>
        <COLUMN>071</COLUMN>
@@ -3637,7 +2884,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNG3</NAME>
-       <TEXT>Kesinti_Oranı_______</TEXT>
        <LINE>018</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3675,7 +2921,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNY3</NAME>
-       <TEXT>Yüzde_______________</TEXT>
        <LINE>018</LINE>
        <COLUMN>050</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3692,7 +2937,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY3</NAME>
-       <TEXT>___</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>018</LINE>
        <COLUMN>071</COLUMN>
@@ -3713,7 +2957,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNG4</NAME>
-       <TEXT>Kesinti_Oranı_______</TEXT>
        <LINE>019</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3751,7 +2994,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNY4</NAME>
-       <TEXT>Yüzde_______________</TEXT>
        <LINE>019</LINE>
        <COLUMN>050</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3768,7 +3010,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY4</NAME>
-       <TEXT>___</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>019</LINE>
        <COLUMN>071</COLUMN>
@@ -3789,7 +3030,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNG5</NAME>
-       <TEXT>Kesinti_Oranı_______</TEXT>
        <LINE>020</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3827,7 +3067,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ORNY5</NAME>
-       <TEXT>Yüzde_______________</TEXT>
        <LINE>020</LINE>
        <COLUMN>050</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3844,7 +3083,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY5</NAME>
-       <TEXT>___</TEXT>
        <DROPDOWN>L</DROPDOWN>
        <LINE>020</LINE>
        <COLUMN>071</COLUMN>
@@ -3865,7 +3103,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9950-ACILM</NAME>
-       <TEXT>Borç_Açıklaması_____</TEXT>
        <LINE>021</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>020</LENGTH>
@@ -3910,303 +3147,6 @@
        <INPUT_FLD>X</INPUT_FLD>
       </RPY_DYFATC>
      </FIELDS>
-     <FLOW_LOGIC>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>PROCESS BEFORE OUTPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE modify_subscreen.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*  CALL SUBSCREEN subscreen_empl   INCLUDING empl_prog empl_dynnr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*  CALL SUBSCREEN subscreen_header INCLUDING header_prog header_dynnr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         infotype specific operations</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE p9950_2100.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*  MODULE hidden_data.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>PROCESS AFTER INPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*  process exit commands</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE exit AT EXIT-COMMAND.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         processing after input</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         check and mark if there was any input: all fields that</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         accept input HAVE TO BE listed here</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-compl.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-aiban.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-alici.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-icrad.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-dosno.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-dossr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-acilm.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-faizt.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny5.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng5.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny4.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng4.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny3.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng3.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny2.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng2.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny1.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng1.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-tkstt.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-tksts.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-waers.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-icrtr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-hspsk.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-kessr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-icrid.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    MODULE input_status ON CHAIN-REQUEST.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*      process functioncodes before input-checks                      *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE pre_input_checks.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         input-checks:                                               *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>*   insert check modules here:</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>*  ...</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*     process function code: ALL fields that appear on the</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*      screen HAVE TO BE listed here (including output-only fields)</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-compl.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-aiban.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-alici.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-icrad.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-dosno.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-dossr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-acilm.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-faizt.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny5.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng5.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny4.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng4.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny3.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng3.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny2.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng2.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orny1.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-orng1.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-tkstt.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-tksts.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-waers.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-icrtr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-hspsk.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-kessr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD p9950-icrid.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    MODULE post_input_checks.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>PROCESS ON VALUE-REQUEST.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD p9950-orng1 MODULE orng1_values.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD p9950-orng2 MODULE orng2_values.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD p9950-orng3 MODULE orng3_values.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD p9950-orng4 MODULE orng4_values.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD p9950-orng5 MODULE orng5_values.</LINE>
-      </RPY_DYFLOW>
-     </FLOW_LOGIC>
     </item>
     <item>
      <HEADER>
@@ -4250,7 +3190,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9951-ICRID</NAME>
-       <TEXT>Borç_ID_____________</TEXT>
        <LINE>002</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -4267,7 +3206,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9951-ICRID</NAME>
-       <TEXT>__________</TEXT>
        <LINE>002</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>010</LENGTH>
@@ -4285,7 +3223,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9951-ODMTR</NAME>
-       <TEXT>Ödeme_Tutarı________</TEXT>
        <LINE>003</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -4302,7 +3239,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9951-ODMTR</NAME>
-       <TEXT>__________</TEXT>
        <LINE>003</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>010</LENGTH>
@@ -4321,7 +3257,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9951-ACIKL</NAME>
-       <TEXT>Kesinti_Açıklaması__</TEXT>
        <LINE>004</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -4337,7 +3272,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>P9951-MANUE</NAME>
-       <TEXT>Manuel_Ödeme________</TEXT>
        <LINE>005</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>020</LENGTH>
@@ -4354,7 +3288,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9951-MANUE</NAME>
-       <TEXT>_</TEXT>
        <LINE>005</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>001</LENGTH>
@@ -4380,178 +3313,6 @@
        <INPUT_FLD>X</INPUT_FLD>
       </RPY_DYFATC>
      </FIELDS>
-     <FLOW_LOGIC>
-      <RPY_DYFLOW>
-       <LINE>PROCESS BEFORE OUTPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         general infotype-independent operations</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE modify_subscreen.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*  CALL SUBSCREEN subscreen_empl   INCLUDING empl_prog empl_dynnr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*  CALL SUBSCREEN subscreen_header INCLUDING header_prog header_dynnr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         infotype specific operations</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE p9950_2200.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE HIDDEN_DATA.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>PROCESS AFTER INPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*  process exit commands</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE EXIT AT EXIT-COMMAND.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         processing after input</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         check and mark if there was any input: all fields that</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         accept input HAVE TO BE listed here</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*    FIELD P9951-BEGDA.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*    FIELD P9951-ENDDA.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD P9951-MANUE.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*    FIELD P9951-ACIKL.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD P9951-ODMTR.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD P9951-ICRID.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    MODULE input_status_subscreen ON CHAIN-REQUEST.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*      process functioncodes before input-checks                      *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE PRE_INPUT_CHECKS.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*         input-checks:                                               *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>*   insert check modules here:</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>*  ...</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*     process function code: ALL fields that appear on the</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*      screen HAVE TO BE listed here (including output-only fields)</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*    FIELD P9951-BEGDA.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*    FIELD P9951-ENDDA.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*    FIELD RP50M-SPRTX.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD P9951-MANUE.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*    FIELD P9951-ACIKL.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD P9951-ODMTR.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD P9951-ICRID.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*    MODULE POST_INPUT_CHECKS.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW/>
-     </FLOW_LOGIC>
     </item>
     <item>
      <HEADER>
@@ -4630,7 +3391,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>RP50M-BEGDA</NAME>
-       <TEXT>Seçim__</TEXT>
        <LINE>005</LINE>
        <COLUMN>004</COLUMN>
        <LENGTH>007</LENGTH>
@@ -4647,7 +3407,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>RP50M-BEGDA</NAME>
-       <TEXT>__________</TEXT>
        <LINE>005</LINE>
        <COLUMN>014</COLUMN>
        <LENGTH>010</LENGTH>
@@ -4664,7 +3423,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>RP50M-ENDDA</NAME>
-       <TEXT>son</TEXT>
        <LINE>005</LINE>
        <COLUMN>027</COLUMN>
        <LENGTH>003</LENGTH>
@@ -4681,7 +3439,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>RP50M-ENDDA</NAME>
-       <TEXT>__________</TEXT>
        <LINE>005</LINE>
        <COLUMN>033</COLUMN>
        <LENGTH>010</LENGTH>
@@ -4698,7 +3455,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>RP50M-SUBTY</NAME>
-       <TEXT>Tür_</TEXT>
        <LINE>005</LINE>
        <COLUMN>050</COLUMN>
        <LENGTH>004</LENGTH>
@@ -4716,7 +3472,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>RP50M-SUBTY</NAME>
-       <TEXT>____</TEXT>
        <LINE>005</LINE>
        <COLUMN>055</COLUMN>
        <LENGTH>004</LENGTH>
@@ -4735,7 +3490,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>RP50M-ABGRD</NAME>
-       <TEXT>Snrl.tarihi_</TEXT>
        <LINE>005</LINE>
        <COLUMN>060</COLUMN>
        <LENGTH>012</LENGTH>
@@ -4753,7 +3507,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>RP50M-ABGRD</NAME>
-       <TEXT>__________</TEXT>
        <LINE>005</LINE>
        <COLUMN>073</COLUMN>
        <LENGTH>010</LENGTH>
@@ -4771,7 +3524,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>RP50M-PAGEA</NAME>
-       <TEXT>Giriş_____</TEXT>
        <LINE>035</LINE>
        <COLUMN>059</COLUMN>
        <LENGTH>010</LENGTH>
@@ -4788,7 +3540,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>RP50M-PAGEA</NAME>
-       <TEXT>___</TEXT>
        <LINE>035</LINE>
        <COLUMN>070</COLUMN>
        <LENGTH>003</LENGTH>
@@ -4806,7 +3557,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>RP50M-PAGEC</NAME>
-       <TEXT>_/_</TEXT>
        <LINE>035</LINE>
        <COLUMN>074</COLUMN>
        <LENGTH>003</LENGTH>
@@ -4823,7 +3573,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>RP50M-PAGEC</NAME>
-       <TEXT>___</TEXT>
        <LINE>035</LINE>
        <COLUMN>078</COLUMN>
        <LENGTH>003</LENGTH>
@@ -4853,7 +3602,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>RP50M-CNTXT</NAME>
-       <TEXT>Geçerli:_________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>025</LENGTH>
@@ -4871,7 +3619,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-BEGDA</NAME>
-       <TEXT>Başlangıç_</TEXT>
        <LINE>001</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>010</LENGTH>
@@ -4888,7 +3635,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ENDDA</NAME>
-       <TEXT>Son_______</TEXT>
        <LINE>001</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>010</LENGTH>
@@ -4905,7 +3651,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ICRID</NAME>
-       <TEXT>Borç_ID___</TEXT>
        <LINE>001</LINE>
        <COLUMN>004</COLUMN>
        <LENGTH>010</LENGTH>
@@ -4922,7 +3667,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-KESSR</NAME>
-       <TEXT>Kes</TEXT>
        <LINE>001</LINE>
        <COLUMN>005</COLUMN>
        <LENGTH>003</LENGTH>
@@ -4939,7 +3683,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-HSPSK</NAME>
-       <TEXT>He</TEXT>
        <LINE>001</LINE>
        <COLUMN>006</COLUMN>
        <LENGTH>002</LENGTH>
@@ -4956,7 +3699,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ICRTR</NAME>
-       <TEXT>Borç_Tutar</TEXT>
        <LINE>001</LINE>
        <COLUMN>007</COLUMN>
        <LENGTH>010</LENGTH>
@@ -4973,7 +3715,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-WAERS</NAME>
-       <TEXT>PB___</TEXT>
        <LINE>001</LINE>
        <COLUMN>008</COLUMN>
        <LENGTH>005</LENGTH>
@@ -4990,7 +3731,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-TKSTS</NAME>
-       <TEXT>Tak</TEXT>
        <LINE>001</LINE>
        <COLUMN>009</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5007,7 +3747,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-TKSTT</NAME>
-       <TEXT>Taksit_Tut</TEXT>
        <LINE>001</LINE>
        <COLUMN>010</COLUMN>
        <LENGTH>010</LENGTH>
@@ -5024,7 +3763,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNG1</NAME>
-       <TEXT>Ke</TEXT>
        <LINE>001</LINE>
        <COLUMN>011</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5041,7 +3779,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNY1</NAME>
-       <TEXT>Yüz</TEXT>
        <LINE>001</LINE>
        <COLUMN>012</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5058,7 +3795,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNG2</NAME>
-       <TEXT>Ke</TEXT>
        <LINE>001</LINE>
        <COLUMN>013</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5075,7 +3811,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNY2</NAME>
-       <TEXT>Yüz</TEXT>
        <LINE>001</LINE>
        <COLUMN>014</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5092,7 +3827,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNG3</NAME>
-       <TEXT>Ke</TEXT>
        <LINE>001</LINE>
        <COLUMN>015</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5109,7 +3843,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNY3</NAME>
-       <TEXT>Yüz</TEXT>
        <LINE>001</LINE>
        <COLUMN>016</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5126,7 +3859,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNG4</NAME>
-       <TEXT>Ke</TEXT>
        <LINE>001</LINE>
        <COLUMN>017</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5143,7 +3875,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNY4</NAME>
-       <TEXT>Yüz</TEXT>
        <LINE>001</LINE>
        <COLUMN>018</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5160,7 +3891,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNG5</NAME>
-       <TEXT>Ke</TEXT>
        <LINE>001</LINE>
        <COLUMN>019</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5177,7 +3907,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNY5</NAME>
-       <TEXT>Yüz</TEXT>
        <LINE>001</LINE>
        <COLUMN>020</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5194,7 +3923,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNG6</NAME>
-       <TEXT>Ke</TEXT>
        <LINE>001</LINE>
        <COLUMN>021</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5211,7 +3939,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNY6</NAME>
-       <TEXT>Yüz</TEXT>
        <LINE>001</LINE>
        <COLUMN>022</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5228,7 +3955,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNG7</NAME>
-       <TEXT>Ke</TEXT>
        <LINE>001</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5245,7 +3971,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ORNY7</NAME>
-       <TEXT>Yüz</TEXT>
        <LINE>001</LINE>
        <COLUMN>024</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5262,7 +3987,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-FAIZT</NAME>
-       <TEXT>Faiz_Tutar</TEXT>
        <LINE>001</LINE>
        <COLUMN>025</COLUMN>
        <LENGTH>010</LENGTH>
@@ -5279,7 +4003,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ACILM</NAME>
-       <TEXT>Borç_Açıklaması_____________________________________________________________________________________________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>026</COLUMN>
        <LENGTH>132</LENGTH>
@@ -5296,7 +4019,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-DOSSR</NAME>
-       <TEXT>Do</TEXT>
        <LINE>001</LINE>
        <COLUMN>027</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5313,7 +4035,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-DOSNO</NAME>
-       <TEXT>Dosya_No____________</TEXT>
        <LINE>001</LINE>
        <COLUMN>028</COLUMN>
        <LENGTH>020</LENGTH>
@@ -5330,7 +4051,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ICRAD</NAME>
-       <TEXT>İcra</TEXT>
        <LINE>001</LINE>
        <COLUMN>029</COLUMN>
        <LENGTH>004</LENGTH>
@@ -5347,7 +4067,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-ALICI</NAME>
-       <TEXT>Alıcı___________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>030</COLUMN>
        <LENGTH>040</LENGTH>
@@ -5364,7 +4083,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-AIBAN</NAME>
-       <TEXT>Alıcı_IBAN________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>031</COLUMN>
        <LENGTH>034</LENGTH>
@@ -5381,7 +4099,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*P9950-COMPL</NAME>
-       <TEXT>T</TEXT>
        <LINE>001</LINE>
        <COLUMN>032</COLUMN>
        <LENGTH>001</LENGTH>
@@ -5398,7 +4115,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*RP50M-SPRTX</NAME>
-       <TEXT>Blokaj_göstergesi_______________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>033</COLUMN>
        <LENGTH>040</LENGTH>
@@ -5432,7 +4148,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>RP50M-CNTXT</NAME>
-       <TEXT>_________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>025</LENGTH>
@@ -5449,7 +4164,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-BEGDA</NAME>
-       <TEXT>__________</TEXT>
        <LINE>001</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>010</LENGTH>
@@ -5467,7 +4181,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ENDDA</NAME>
-       <TEXT>__________</TEXT>
        <LINE>001</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>010</LENGTH>
@@ -5485,7 +4198,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ICRID</NAME>
-       <TEXT>__________</TEXT>
        <LINE>001</LINE>
        <COLUMN>004</COLUMN>
        <LENGTH>010</LENGTH>
@@ -5503,7 +4215,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-KESSR</NAME>
-       <TEXT>___</TEXT>
        <LINE>001</LINE>
        <COLUMN>005</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5521,7 +4232,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-HSPSK</NAME>
-       <TEXT>__</TEXT>
        <LINE>001</LINE>
        <COLUMN>006</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5540,7 +4250,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ICRTR</NAME>
-       <TEXT>__________</TEXT>
        <LINE>001</LINE>
        <COLUMN>007</COLUMN>
        <LENGTH>010</LENGTH>
@@ -5559,7 +4268,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-WAERS</NAME>
-       <TEXT>_____</TEXT>
        <LINE>001</LINE>
        <COLUMN>008</COLUMN>
        <LENGTH>005</LENGTH>
@@ -5578,7 +4286,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-TKSTS</NAME>
-       <TEXT>___</TEXT>
        <LINE>001</LINE>
        <COLUMN>009</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5596,7 +4303,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-TKSTT</NAME>
-       <TEXT>__________</TEXT>
        <LINE>001</LINE>
        <COLUMN>010</COLUMN>
        <LENGTH>010</LENGTH>
@@ -5615,7 +4321,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNG1</NAME>
-       <TEXT>__</TEXT>
        <LINE>001</LINE>
        <COLUMN>011</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5633,7 +4338,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY1</NAME>
-       <TEXT>___</TEXT>
        <LINE>001</LINE>
        <COLUMN>012</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5652,7 +4356,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNG2</NAME>
-       <TEXT>__</TEXT>
        <LINE>001</LINE>
        <COLUMN>013</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5670,7 +4373,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY2</NAME>
-       <TEXT>___</TEXT>
        <LINE>001</LINE>
        <COLUMN>014</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5689,7 +4391,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNG3</NAME>
-       <TEXT>__</TEXT>
        <LINE>001</LINE>
        <COLUMN>015</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5707,7 +4408,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY3</NAME>
-       <TEXT>___</TEXT>
        <LINE>001</LINE>
        <COLUMN>016</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5726,7 +4426,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNG4</NAME>
-       <TEXT>__</TEXT>
        <LINE>001</LINE>
        <COLUMN>017</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5744,7 +4443,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY4</NAME>
-       <TEXT>___</TEXT>
        <LINE>001</LINE>
        <COLUMN>018</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5763,7 +4461,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNG5</NAME>
-       <TEXT>__</TEXT>
        <LINE>001</LINE>
        <COLUMN>019</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5781,7 +4478,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY5</NAME>
-       <TEXT>___</TEXT>
        <LINE>001</LINE>
        <COLUMN>020</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5800,7 +4496,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNG6</NAME>
-       <TEXT>__</TEXT>
        <LINE>001</LINE>
        <COLUMN>021</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5818,7 +4513,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY6</NAME>
-       <TEXT>___</TEXT>
        <LINE>001</LINE>
        <COLUMN>022</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5837,7 +4531,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNG7</NAME>
-       <TEXT>__</TEXT>
        <LINE>001</LINE>
        <COLUMN>023</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5855,7 +4548,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ORNY7</NAME>
-       <TEXT>___</TEXT>
        <LINE>001</LINE>
        <COLUMN>024</COLUMN>
        <LENGTH>003</LENGTH>
@@ -5874,7 +4566,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-FAIZT</NAME>
-       <TEXT>__________</TEXT>
        <LINE>001</LINE>
        <COLUMN>025</COLUMN>
        <LENGTH>010</LENGTH>
@@ -5893,7 +4584,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ACILM</NAME>
-       <TEXT>____________________________________________________________________________________________________________________________________</TEXT>
        <ROLLING>X</ROLLING>
        <LINE>001</LINE>
        <COLUMN>026</COLUMN>
@@ -5913,7 +4603,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-DOSSR</NAME>
-       <TEXT>__</TEXT>
        <LINE>001</LINE>
        <COLUMN>027</COLUMN>
        <LENGTH>002</LENGTH>
@@ -5931,7 +4620,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-DOSNO</NAME>
-       <TEXT>____________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>028</COLUMN>
        <LENGTH>020</LENGTH>
@@ -5950,7 +4638,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ICRAD</NAME>
-       <TEXT>____</TEXT>
        <LINE>001</LINE>
        <COLUMN>029</COLUMN>
        <LENGTH>004</LENGTH>
@@ -5968,7 +4655,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-ALICI</NAME>
-       <TEXT>________________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>030</COLUMN>
        <LENGTH>040</LENGTH>
@@ -5986,7 +4672,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-AIBAN</NAME>
-       <TEXT>__________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>031</COLUMN>
        <LENGTH>034</LENGTH>
@@ -6004,7 +4689,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>P9950-COMPL</NAME>
-       <TEXT>_</TEXT>
        <LINE>001</LINE>
        <COLUMN>032</COLUMN>
        <LENGTH>001</LENGTH>
@@ -6023,7 +4707,6 @@
        <CONT_NAME>TC3000</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>RP50M-SPRTX</NAME>
-       <TEXT>________________________________________</TEXT>
        <ROLLING>X</ROLLING>
        <LINE>001</LINE>
        <COLUMN>033</COLUMN>
@@ -6039,152 +4722,6 @@
        <REQU_ENTRY>N</REQU_ENTRY>
       </RPY_DYFATC>
      </FIELDS>
-     <FLOW_LOGIC>
-      <RPY_DYFLOW>
-       <LINE>PROCESS BEFORE OUTPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*       Setzt PFSTATUS und fuehrt Bildmodifikationen durch.           *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE BEFORE_OUTPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CALL SUBSCREEN subscreen_empl INCLUDING empl_prog empl_dynnr.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE ASSIGN_TC3000.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE VARIATION_TC.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*       Holt Infotypsaetze fuer die Anzeige.                          *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  LOOP.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    MODULE PSLIST_TC.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*       Infotypspezifischer Modul fuer Textanzeige.                   *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    MODULE P9950L.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDLOOP.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CALL SUBSCREEN SUBSCREEN_HEADER INCLUDING HEADER_PROG HEADER_DYNNR.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>PROCESS AFTER INPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*       Eingabe von &apos;E&apos; im OK-Code                                    *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE EXIT AT EXIT-COMMAND.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*       Verarbeitung nach der Eingabe.                                *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  LOOP.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD RP50M-SELE2 MODULE MARK ON REQUEST.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDLOOP.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*       Bei der Eingabe vom Gueltigkeitsintervall oder Infosubtyp     *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*       wird ein neuer Bereich zur Anzeige ausgewaehlt.               *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CALL SUBSCREEN subscreen_empl.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD RP50M-BEGDA.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD RP50M-ENDDA.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD RP50M-SUBTY.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    MODULE SELECT_FOR_LIST ON CHAIN-REQUEST.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  FIELD RP50M-PAGEA ON REQUEST MODULE TOP_OF_LIST.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE ADJUST_LIST_TC.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*       Allgemeine Funktionscodebearbeitung.                          *</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*---------------------------------------------------------------------*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE POST_INPUT_CHECKS.</LINE>
-      </RPY_DYFLOW>
-     </FLOW_LOGIC>
     </item>
    </DYNPROS>
    <CUA>

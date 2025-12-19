@@ -1,4 +1,3 @@
-* regenerated at 13.01.2020 21:01:47
 FUNCTION-POOL zhrbr_v001                 MESSAGE-ID sv.
 
 * INCLUDE LZHRBR_V001D...                    " Local class definition

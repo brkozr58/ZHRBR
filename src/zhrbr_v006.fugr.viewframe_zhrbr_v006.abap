@@ -1,7 +1,5 @@
 *---------------------------------------------------------------------*
 *    program for:   VIEWFRAME_ZHRBR_V006
-*   generation date: 13.01.2020 at 21:04:11
-*   view maintenance generator version: #001407#
 *---------------------------------------------------------------------*
 FUNCTION VIEWFRAME_ZHRBR_V006          .
 

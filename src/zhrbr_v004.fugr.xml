@@ -421,7 +421,6 @@
        <CONT_NAME>TCTRL_ZHRBR_V004</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZHRBR_V004-BUKRS</NAME>
-       <TEXT>ŞK______________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>040</LENGTH>
@@ -551,7 +550,6 @@
        <CONT_NAME>TCTRL_ZHRBR_V004</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZHRBR_V004-ISLEM</NAME>
-       <TEXT>İşlem___________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>011</COLUMN>
        <LENGTH>040</LENGTH>
@@ -769,107 +767,6 @@
        <DICT_I_VAL>X</DICT_I_VAL>
       </RPY_DYFATC>
      </FIELDS>
-     <FLOW_LOGIC>
-      <RPY_DYFLOW>
-       <LINE>PROCESS BEFORE OUTPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE liste_initialisieren.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  LOOP AT extract WITH CONTROL</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>   tctrl_zhrbr_v004 CURSOR nextline.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    MODULE liste_show_liste.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    MODULE set_text.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDLOOP.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>PROCESS AFTER INPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE liste_exit_command AT EXIT-COMMAND.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE liste_before_loop.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  LOOP AT extract.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    MODULE liste_init_workarea.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v004-orngr .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v004-bukrs .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v004-lgart .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v004-begda .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v004-endda .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v004-lgart_nt .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v004-islem .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      MODULE set_update_flag ON CHAIN-REQUEST.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD vim_marked MODULE liste_mark_checkbox.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v004-orngr .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v004-bukrs .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v004-lgart .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v004-begda .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      MODULE liste_update_liste.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDLOOP.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE liste_after_loop.</LINE>
-      </RPY_DYFLOW>
-     </FLOW_LOGIC>
     </item>
    </DYNPROS>
   </asx:values>

@@ -389,7 +389,6 @@
        <CONT_NAME>TCTRL_ZHRBR_V006</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZHRBR_V006-ICRAD</NAME>
-       <TEXT>İcra_Daire______________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>040</LENGTH>
@@ -406,7 +405,6 @@
        <CONT_NAME>TCTRL_ZHRBR_V006</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZHRBR_V006-ICRAC</NAME>
-       <TEXT>İcra_Açıklama___________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>040</LENGTH>
@@ -423,7 +421,6 @@
        <CONT_NAME>TCTRL_ZHRBR_V006</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZHRBR_V006-ICRYR</NAME>
-       <TEXT>Bulunduğu_Yer___________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>040</LENGTH>
@@ -440,7 +437,6 @@
        <CONT_NAME>TCTRL_ZHRBR_V006</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZHRBR_V006-ICRAA</NAME>
-       <TEXT>İcra_Dairesi_Adı________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>004</COLUMN>
        <LENGTH>040</LENGTH>
@@ -457,7 +453,6 @@
        <CONT_NAME>TCTRL_ZHRBR_V006</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZHRBR_V006-ICAIB</NAME>
-       <TEXT>Alıcı_IBAN______________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>005</COLUMN>
        <LENGTH>040</LENGTH>
@@ -506,7 +501,6 @@
        <CONT_NAME>TCTRL_ZHRBR_V006</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>ZHRBR_V006-ICRAC</NAME>
-       <TEXT>________________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>040</LENGTH>
@@ -523,7 +517,6 @@
        <CONT_NAME>TCTRL_ZHRBR_V006</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>ZHRBR_V006-ICRYR</NAME>
-       <TEXT>________________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>040</LENGTH>
@@ -540,7 +533,6 @@
        <CONT_NAME>TCTRL_ZHRBR_V006</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>ZHRBR_V006-ICRAA</NAME>
-       <TEXT>________________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>004</COLUMN>
        <LENGTH>040</LENGTH>
@@ -570,90 +562,6 @@
        <OUTPUT_FLD>X</OUTPUT_FLD>
       </RPY_DYFATC>
      </FIELDS>
-     <FLOW_LOGIC>
-      <RPY_DYFLOW/>
-      <RPY_DYFLOW>
-       <LINE>PROCESS BEFORE OUTPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE liste_initialisieren.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  LOOP AT extract WITH CONTROL</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>   tctrl_zhrbr_v006 CURSOR nextline.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    MODULE liste_show_liste.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDLOOP.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>PROCESS AFTER INPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE liste_exit_command AT EXIT-COMMAND.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE liste_before_loop.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  LOOP AT extract.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    MODULE liste_init_workarea.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v006-icrad .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v006-icrac .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v006-icryr .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v006-icraa .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v006-icaib .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      MODULE set_update_flag ON CHAIN-REQUEST.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    FIELD vim_marked MODULE liste_mark_checkbox.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      FIELD zhrbr_v006-icrad .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>      MODULE liste_update_liste.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>    ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  ENDLOOP.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE liste_after_loop.</LINE>
-      </RPY_DYFLOW>
-     </FLOW_LOGIC>
     </item>
    </DYNPROS>
   </asx:values>

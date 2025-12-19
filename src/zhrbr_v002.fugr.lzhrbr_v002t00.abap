@@ -1,7 +1,5 @@
 *---------------------------------------------------------------------*
 *    view related data declarations
-*   generation date: 13.01.2020 at 21:02:20
-*   view maintenance generator version: #001407#
 *---------------------------------------------------------------------*
 *...processing: ZHRBR_V002......................................*
 TABLES: ZHRBR_V002, *ZHRBR_V002. "view work areas
